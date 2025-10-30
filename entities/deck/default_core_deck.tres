@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DeckResource" load_steps=6 format=3 uid="uid://b7ka3wtrjky5t"]
+
+[ext_resource type="Script" uid="uid://bnxr8ck5gb831" path="res://entities/card/resources/card_resource.gd" id="1_t8qp3"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="2_b7diu"]
+[ext_resource type="Resource" uid="uid://ohdwkhweq31j" path="res://entities/card/resources/core/strike.tres" id="3_b7diu"]
+[ext_resource type="Script" uid="uid://crulyl6kcnd1q" path="res://entities/deck/deck_resource.gd" id="3_t8qp3"]
+[ext_resource type="Resource" uid="uid://dayjusrc67u77" path="res://entities/card/resources/core/spare credits.tres" id="4_t8qp3"]
+
+[resource]
+script = ExtResource("3_t8qp3")
+core_cards = Array[ExtResource("2_b7diu")]([ExtResource("3_b7diu"), ExtResource("3_b7diu"), ExtResource("3_b7diu"), ExtResource("4_t8qp3"), ExtResource("3_b7diu"), ExtResource("3_b7diu"), ExtResource("3_b7diu")])
+metadata/_custom_type_script = "uid://crulyl6kcnd1q"

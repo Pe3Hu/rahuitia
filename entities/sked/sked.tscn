@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj151eadmuuw2"]
+
+[ext_resource type="Script" uid="uid://b53j4ng03ivnt" path="res://entities/sked/sked.gd" id="1_ek8jt"]
+[ext_resource type="Resource" uid="uid://bvh3wxi8vdoam" path="res://entities/token/condition/default_0.tres" id="2_o6a1u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma2a1"]
+
+[node name="Sked" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma2a1")
+script = ExtResource("1_ek8jt")
+operation_scene = null
+default_condition = ExtResource("2_o6a1u")
+
+[node name="Operations" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1

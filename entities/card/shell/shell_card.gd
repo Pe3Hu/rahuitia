@@ -1,0 +1,51 @@
+@tool
+class_name ShellCard 
+extends Card
+
+
+# these are custom variables they will be set with data from *collection.json
+@export var value : int
+@export var type : String
+@export var cost : int
+@export var description : String
+
+#@onready var cost_label = %ActionCostLabel
+@onready var cost_token = %CostToken
+#@onready var power_label = $Frontface/PowerLabel
+@onready var name_label = %NameLabel
+@onready var type_label = %TypeLabel
+@onready var sked = %Sked
+#@onready var texture_rect_2 = $Frontface/TextureRect2
+
+
+func _ready():
+	super()
+	#card_data.connect("card_data_updated", _update_display)
+	resource.connect("is_updated", _update_display)
+	
+	_update_display()
+	
+func upgrade():
+	value += 1
+	_update_display()
+	
+func _update_display():
+	cost_token.value_int = int(resource.cost)
+	
+	%NameLabel.text = resource.name.capitalize()
+	%TypeLabel.text = resource.type.capitalize()
+	%FactionToken.faction = resource.faction
+	%LevelToken.value_int = resource.level
+	
+	sked.init_operations()
+	#cost_label.text = "%s" % card_data.cost
+	#name_label.text = "%s" % card_data.name
+	#type_label.text = "%s" % card_data.type
+	#if card_data.type == "Attack":
+		#power_label.text = "%s" % card_data.power
+		##texture_rect_2.modulate = Color.WHITE
+	#elif card_data.type == "Block":
+		#power_label.text = "%s" % card_data.block_amount
+		##texture_rect_2.modulate = Color.AQUA
+	#else:
+		#power_label.visible = false

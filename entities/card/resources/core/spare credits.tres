@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=4 format=3 uid="uid://dayjusrc67u77"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_6ostr"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="2_6ostr"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ka28y"]
+
+[resource]
+script = ExtResource("3_ka28y")
+default_effects = Array[ExtResource("1_6ostr")]([ExtResource("2_6ostr")])
+name = "spare credits"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

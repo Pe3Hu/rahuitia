@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn2ej8wtxey2u"]
+
+[ext_resource type="Script" uid="uid://o7gvfbtlpyva" path="res://entities/card/shell/shell_card.gd" id="1_gssri"]
+[ext_resource type="Texture2D" uid="uid://ben7qqx34vpkq" path="res://entities/card/images/card_back.png" id="2_2dd2c"]
+[ext_resource type="Texture2D" uid="uid://cq38tr3k0do84" path="res://entities/card/images/card_empty.png" id="3_b7g5p"]
+[ext_resource type="PackedScene" uid="uid://cyr4dfy8qnwh6" path="res://entities/token/token.tscn" id="4_kwg8u"]
+[ext_resource type="PackedScene" uid="uid://bj151eadmuuw2" path="res://entities/sked/sked.tscn" id="5_x0y2x"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gssri")
+resource = ""
+
+[node name="Backface" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 324.0
+texture = ExtResource("2_2dd2c")
+
+[node name="Frontface" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 324.0
+texture = ExtResource("3_b7g5p")
+
+[node name="MarginContainer" type="MarginContainer" parent="Frontface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="NameLabel" type="Label" parent="Frontface/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "Nice Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightUpContainer" type="VBoxContainer" parent="Frontface/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="CostToken" parent="Frontface/MarginContainer/RightUpContainer" instance=ExtResource("4_kwg8u")]
+unique_name_in_owner = true
+layout_mode = 2
+core = "action"
+value_int = 1
+
+[node name="FactionToken" parent="Frontface/MarginContainer/RightUpContainer" instance=ExtResource("4_kwg8u")]
+unique_name_in_owner = true
+layout_mode = 2
+faction = "council"
+
+[node name="LeftDownContainer" type="VBoxContainer" parent="Frontface/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TypeLabel" type="Label" parent="Frontface/MarginContainer/LeftDownContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 18
+text = "Tactic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sked" parent="Frontface/MarginContainer/LeftDownContainer" node_paths=PackedStringArray("card") instance=ExtResource("5_x0y2x")]
+unique_name_in_owner = true
+layout_mode = 2
+card = NodePath("../../../..")
+
+[node name="LevelToken" parent="Frontface/MarginContainer" instance=ExtResource("4_kwg8u")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+core = "level"
+value_int = 0

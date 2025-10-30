@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConditionResource" load_steps=2 format=3 uid="uid://dalhfow7lnoiv"]
+
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="1_hckvr"]
+
+[resource]
+script = ExtResource("1_hckvr")
+type = "backstab"
+value_int = 1
+metadata/_custom_type_script = "uid://72gegbx4ks4"
