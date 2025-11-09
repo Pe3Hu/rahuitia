@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vylg2"]
 
 [node name="Operation" type="PanelContainer"]
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vylg2")
 script = ExtResource("1_mrb2e")
 

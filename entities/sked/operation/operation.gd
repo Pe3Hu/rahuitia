@@ -14,7 +14,7 @@ var resource: OperationResource:
 
 
 func init_tokens() -> void:
-	if resource.condition.type == "default":
+	if resource.condition.type == FrameworkSettings.ConditionType.DEFAULT:
 		condition_box.visible = false
 	else:
 		condition_token.condition = resource.condition.type

@@ -1,14 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt2x5ecxjo2vu"]
+[gd_scene load_steps=17 format=3 uid="uid://bt2x5ecxjo2vu"]
 
 [ext_resource type="Script" uid="uid://d1hs1spbljla" path="res://entities/board/board.gd" id="1_46inl"]
-[ext_resource type="Texture2D" uid="uid://bddymiv4rv8kw" path="res://entities/board/images/white-circle.png" id="2_ay0lk"]
+[ext_resource type="PackedScene" uid="uid://mhvnxqjo5wug" path="res://entities/bank/bank.tscn" id="2_cfpx4"]
 [ext_resource type="Script" uid="uid://cip5s2eeqh6pu" path="res://entities/dropzone/shell/shell_dropzone_enemy.gd" id="3_ynpsh"]
 [ext_resource type="Texture2D" uid="uid://b0ymf1fwfgbss" path="res://entities/board/images/enemy_crab.png" id="4_nv1xt"]
 [ext_resource type="Script" uid="uid://cocowg86swd54" path="res://entities/dropzone/shell/shell_dropzone_non-attack.gd" id="7_4haen"]
 [ext_resource type="Texture2D" uid="uid://bpjxsk1mxfl77" path="res://entities/card/images/1x1_#ffffffff.png" id="8_86uwj"]
 [ext_resource type="Resource" uid="uid://b7ka3wtrjky5t" path="res://entities/deck/default_core_deck.tres" id="8_cfpx4"]
 [ext_resource type="Script" uid="uid://2qjlgq0qb717" path="res://entities/dropzone/pile/card_pile.gd" id="9_d6mq2"]
+[ext_resource type="PackedScene" uid="uid://dscvkdwaqhv1j" path="res://entities/cursor/custom_cursor.tscn" id="10_46inl"]
 [ext_resource type="PackedScene" uid="uid://dn2ej8wtxey2u" path="res://entities/card/shell/shell_card.tscn" id="10_egn8s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfpx4"]
+bg_color = Color(0.6, 0.6, 0.6, 0.32156864)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfpx4"]
 
 [sub_resource type="Curve" id="Curve_noha0"]
 _limits = [-15.0, 15.0, 0.0, 1.0]
@@ -31,71 +37,57 @@ bg_color = Color(0, 0, 0, 1)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Board" type="Node2D"]
+[node name="Board" type="MarginContainer"]
+custom_minimum_size = Vector2(1600, 900)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -300.0
+offset_right = 600.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("1_46inl")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 0.254902, 1)
-offset_left = 1304.0
-offset_top = 264.0
-offset_right = 1376.0
-offset_bottom = 336.0
-texture = ExtResource("2_ay0lk")
+[node name="BGPanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cfpx4")
 
-[node name="ManaLabel" type="Label" parent="."]
-offset_left = 1263.0
-offset_top = 273.0
-offset_right = 1423.0
-offset_bottom = 344.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-text = "4"
-horizontal_alignment = 1
+[node name="Bank" parent="." node_paths=PackedStringArray("board") instance=ExtResource("2_cfpx4")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+board = NodePath("..")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(0, 1, 1, 1)
-offset_left = 1304.0
-offset_top = 184.0
-offset_right = 1376.0
-offset_bottom = 256.0
-texture = ExtResource("2_ay0lk")
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
-[node name="BlockLabel" type="Label" parent="."]
-offset_left = 1263.0
-offset_top = 192.0
-offset_right = 1423.0
-offset_bottom = 263.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-text = "0
-"
-horizontal_alignment = 1
-
-[node name="EndTurnButton" type="Button" parent="."]
-offset_left = 1296.0
-offset_top = 368.0
-offset_right = 1374.0
-offset_bottom = 399.0
-text = "End Turn"
-
-[node name="CrabCardDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile")]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 816.0
-offset_top = 40.0
-offset_right = 1008.0
-offset_bottom = 304.0
+[node name="CrabCardDropzone" type="Control" parent="GridContainer" node_paths=PackedStringArray("bank", "card_pile")]
+layout_mode = 2
 script = ExtResource("3_ynpsh")
 hp = 75
-card_pile = NodePath("../CardPile")
+bank = NodePath("../../Bank")
+card_pile = NodePath("../../CardPile")
 
-[node name="Crab" type="TextureRect" parent="CrabCardDropzone"]
+[node name="Crab" type="TextureRect" parent="GridContainer/CrabCardDropzone"]
 layout_mode = 0
 offset_right = 168.0
 offset_bottom = 240.0
 texture = ExtResource("4_nv1xt")
 
-[node name="Label" type="Label" parent="CrabCardDropzone"]
+[node name="Label" type="Label" parent="GridContainer/CrabCardDropzone"]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 168.0
@@ -104,13 +96,22 @@ offset_bottom = 191.0
 text = "30"
 horizontal_alignment = 1
 
-[node name="BlockCardDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile")]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 264.0
-offset_right = 1120.0
-offset_bottom = 344.0
+[node name="EndTurnButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_cfpx4")
+text = "End Turn"
+
+[node name="BlockCardDropzone" type="Control" parent="." node_paths=PackedStringArray("bank", "card_pile")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 1
 script = ExtResource("7_4haen")
+bank = NodePath("../Bank")
 card_pile = NodePath("../CardPile")
 
 [node name="TextureRect" type="TextureRect" parent="BlockCardDropzone"]
@@ -123,40 +124,64 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_86uwj")
 
-[node name="CardPile" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="CardPile" type="Control" parent="." node_paths=PackedStringArray("bank")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
 script = ExtResource("9_d6mq2")
+bank = NodePath("../Bank")
 default_core_deck = ExtResource("8_cfpx4")
 card_scene = ExtResource("10_egn8s")
-click_draw_pile_to_draw = false
+draw_position = Vector2(20, 40)
+hand_position = null
+play_position = null
+discard_position = Vector2(20, 460)
+stack_display_gap = null
+max_stack_display = null
+card_return_speed = null
+click_draw_pile_to_draw = null
+cant_draw_at_hand_limit = null
+shuffle_discard_on_empty_draw = null
+draw_direction = null
+hand_enabled = null
+hand_face_up = null
+max_hand_size = null
+max_hand_spread = null
+card_hover_distance = null
 drag_when_clicked = false
 hand_rotation_curve = SubResource("Curve_noha0")
 hand_vertical_curve = SubResource("Curve_7lcs2")
+discard_face_up = null
+discard_layout = null
+play_stack_display_gap = null
+play_face_up = null
+play_layout = null
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
 z_index = 4000
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -44.0
-offset_right = 240.0
-offset_bottom = 44.0
-grow_vertical = 2
+layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ft1ui")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "Card Description here"
 
 [node name="TargetingLine2D" type="Line2D" parent="."]
+unique_name_in_owner = true
 visible = false
-z_index = 4000
+z_index = 2
 points = PackedVector2Array(0, 0, 100, 0)
 width_curve = SubResource("Curve_mm80a")
 
+[node name="CustomCursor" parent="." instance=ExtResource("10_46inl")]
+unique_name_in_owner = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

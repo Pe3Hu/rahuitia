@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_qyikt")
-type = "train"
+type = 7
 value_int = 1
 metadata/_custom_type_script = "uid://bteu5efegjnpk"

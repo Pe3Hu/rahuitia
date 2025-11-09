@@ -3,6 +3,7 @@ class_name ShellCard
 extends Card
 
 
+#region var
 # these are custom variables they will be set with data from *collection.json
 @export var value : int
 @export var type : String
@@ -16,6 +17,7 @@ extends Card
 @onready var type_label = %TypeLabel
 @onready var sked = %Sked
 #@onready var texture_rect_2 = $Frontface/TextureRect2
+#endregion
 
 
 func _ready():
@@ -33,8 +35,8 @@ func _update_display():
 	cost_token.value_int = int(resource.cost)
 	
 	%NameLabel.text = resource.name.capitalize()
-	%TypeLabel.text = resource.type.capitalize()
-	%FactionToken.faction = resource.faction
+	%TypeLabel.text = FrameworkSettings.card_to_string[resource.type].capitalize()
+	%FactionToken.faction = resource.faction#.capitalize()
 	%LevelToken.value_int = resource.level
 	
 	sked.init_operations()

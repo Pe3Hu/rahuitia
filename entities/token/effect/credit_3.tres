@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_wdm05")
-type = "credit"
+type = 2
 value_int = 3
 metadata/_custom_type_script = "uid://bteu5efegjnpk"

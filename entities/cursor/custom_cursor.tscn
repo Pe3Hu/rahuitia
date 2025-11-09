@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dscvkdwaqhv1j"]
+
+[ext_resource type="Texture2D" uid="uid://ci2hrr3of4tr2" path="res://entities/cursor/images/cursor.png" id="1_p0yfo"]
+[ext_resource type="Script" uid="uid://c7p7cwkwbbmso" path="res://entities/cursor/custom_cursor.gd" id="2_feerx"]
+
+[node name="CustomCursor" type="Sprite2D"]
+z_index = 100
+position = Vector2(1, 5)
+scale = Vector2(2, 2)
+texture = ExtResource("1_p0yfo")
+hframes = 3
+script = ExtResource("2_feerx")
