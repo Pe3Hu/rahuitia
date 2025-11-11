@@ -2,9 +2,9 @@ extends Node
 
 
 
-const ENEMY_LIMIT: int = 3
 const STARTING_CREDIT: int = 3
 const TURN_ACTION: int = 3
+const STARTING_CARD: int = 3
 
 
 #region pile enum
@@ -23,29 +23,7 @@ enum PileDirection {
 }
 #endregion
 
-#region card enum
-enum CoreType {
-	DEFAULT = 0,
-	LEVEL = 7,
-	DAMAGE = 1,
-	CREDIT = 2,
-	ACTION = 3,
-	ARMOR = 4,
-	HEALTH = 5,
-	SACRIFICE = 6
-}
-
-const core_to_string = {
-	CoreType.LEVEL: "level",
-	CoreType.DAMAGE: "damage",
-	CoreType.CREDIT: "credit",
-	CoreType.ACTION: "action",
-	CoreType.ARMOR: "armor",
-	CoreType.HEALTH: "health",
-	CoreType.SACRIFICE: "sacrifice",
-	
-}
-
+#region core enum
 enum FactionType {
 	DEFAULT = 0,
 	COUNCIL = 1,
@@ -62,14 +40,19 @@ const faction_to_string = {
 	FactionType.JUNKER: "junker",
 }
 
-enum CardType {
+enum CoreType {
 	TACTIC = 1,
 	ALLY = 2
 }
 
 const card_to_string = {
-	CardType.TACTIC: "tactic",
-	CardType.ALLY: "ally",
+	CoreType.TACTIC: "tactic",
+	CoreType.ALLY: "ally",
+}
+
+enum SideState {
+	FRIENDLY,
+	HOSTILE
 }
 #endregion
 
@@ -96,6 +79,39 @@ enum ConditionValue {
 #endregion
 
 #region effect enum
+enum TokenType {
+	DEFAULT = 0,
+	LEVEL = 7,
+	DAMAGE = 1,
+	CREDIT = 2,
+	ACTION = 3,
+	ARMOR = 4,
+	HEALTH = 5,
+	SACRIFICE = 6,
+	
+	DANGER = 100,
+	OFFENSIVE = 101,
+	DEFENSIVE = 102
+}
+
+const effect_to_token = {
+	EffectType.CREDIT: TokenType.CREDIT
+}
+
+const token_to_string = {
+	TokenType.LEVEL: "level",
+	TokenType.DAMAGE: "damage",
+	TokenType.CREDIT: "credit",
+	TokenType.ACTION: "action",
+	TokenType.ARMOR: "armor",
+	TokenType.HEALTH: "health",
+	TokenType.SACRIFICE: "sacrifice",
+	
+	TokenType.DANGER: "danger",
+	TokenType.OFFENSIVE: "offensive",
+	TokenType.DEFENSIVE: "defensive",
+}
+
 enum EffectType {
 	DAMAGE = 1,
 	CREDIT = 2,
@@ -110,6 +126,70 @@ enum EffectType {
 enum EffectValue {
 	DEFAULT = 0,
 	FOCUS = 1
+}
+#endregion
+
+#region threat
+var DANGER_MARKER = 0
+
+const TURN_THREAT_MIN: int = 3
+const TURN_THREAT_MAX: int = 3
+
+enum PlanetType{
+	DEFAULT,
+	CERES,
+	VIRENOS,
+	MITHRAS,
+	TRIUMVIRATE,
+	HARBRINGER,
+}
+
+const planet_to_string = {
+	PlanetType.DEFAULT: "",
+	PlanetType.CERES: "cares",
+	PlanetType.VIRENOS: "virenos",
+	PlanetType.MITHRAS: "mithras",
+}
+
+enum ThreatType{
+	HUMAN,
+	BEAST,
+	VIREN,
+	VEHICLE
+}
+
+const threat_to_string = {
+	ThreatType.HUMAN: "human",
+	ThreatType.BEAST: "beast",
+	ThreatType.VIREN: "viren",
+	ThreatType.VEHICLE: "vehicle",
+}
+
+enum KeywordType{
+	FAST,
+	RAGE,
+	TAUNT,
+	CRAZED,
+	TERROR
+}
+
+const keyword_to_string = {
+	KeywordType.FAST: "fast",
+	KeywordType.RAGE: "rage",
+	KeywordType.TAUNT: "taunt",
+	KeywordType.CRAZED: "crazed",
+	KeywordType.TERROR: "terror",
+}
+
+enum DangerType {
+	DEFAULT = 0,
+	DAMAGE = 1,
+	ARMOR = 4,
+}
+
+const danger_to_string = {
+	DangerType.DAMAGE: "damage",
+	DangerType.ARMOR: "armor",
 }
 #endregion
 

@@ -7,31 +7,22 @@ extends MarginContainer
 @onready var cursor: CustomCursor = %CustomCursor
 
 @onready var card_pile: CardPile = %CardPile
-@onready var block_card_dropzone = %BlockCardDropzone
 #@onready var panel_container = $PanelContainer
 #@onready var rich_text_label = %RichTextLabel
 @onready var targeting_line = %TargetingLine2D
 
 @onready var bank: Bank = %Bank
+@onready var tide: Tide = %Tide
 @onready var custom_cursor: CustomCursor = %CustomCursor
 
-var current_hovered_card : Card
-
-var block := 0 :
-	set(val):
-		block = val
-		_update_display()
-var mana := 4 :
-	set(val):
-		mana = val
-		_update_display()
+var current_hovered_card: Card
 #endregion
-
 
 
 func _ready():
 	#await get_tree().create_timer(4.1)
-	card_pile.draw(FrameworkSettings.ENEMY_LIMIT)
+	card_pile.draw(FrameworkSettings.STARTING_CARD)
+	tide.refill_threat_dropzones()
 	card_pile.connect("card_hovered", func(card):
 		#rich_text_label.text = card.card_data.format_description()
 		#panel_container.visible = true
@@ -50,13 +41,12 @@ func _ready():
 	)
 	
 func _on_end_turn_button_pressed():
-	#mana = starting_mana
-	block = 0
 	for card in card_pile.get_cards_in_pile(FrameworkSettings.PileType.PLAY):
 		card_pile.set_card_pile(card, FrameworkSettings.PileType.DISCARD)
-	for card in card_pile.get_cards_in_pile(FrameworkSettings.PileType.HAND):
-		card_pile.set_card_pile(card, FrameworkSettings.PileType.DISCARD)
-	card_pile.draw(FrameworkSettings.ENEMY_LIMIT)
+	#for card in card_pile.get_cards_in_pile(FrameworkSettings.PileType.HAND):
+		#card_pile.set_card_pile(card, FrameworkSettings.PileType.DISCARD)
+	#card_pile.draw(FrameworkSettings.ENEMY_LIMIT)
+	tide.end_of_turn()
 	bank.end_of_turn()
 	
 func _update_display():

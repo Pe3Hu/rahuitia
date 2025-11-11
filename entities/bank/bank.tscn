@@ -19,25 +19,25 @@ alignment = 1
 [node name="ActionToken" parent="VBoxContainer/CoreTokens" instance=ExtResource("2_v5rbr")]
 unique_name_in_owner = true
 layout_mode = 2
-core = 3
+type = 3
 value_int = 3
 
 [node name="CreditToken" parent="VBoxContainer/CoreTokens" instance=ExtResource("2_v5rbr")]
 unique_name_in_owner = true
 layout_mode = 2
-core = 2
+type = 2
 value_int = 3
 
 [node name="ArmorToken" parent="VBoxContainer/CoreTokens" instance=ExtResource("2_v5rbr")]
 unique_name_in_owner = true
 layout_mode = 2
-core = 4
+type = 4
 value_int = 0
 
 [node name="HealthToken" parent="VBoxContainer/CoreTokens" instance=ExtResource("2_v5rbr")]
 unique_name_in_owner = true
 layout_mode = 2
-core = 5
+type = 5
 value_int = 9
 
 [node name="DamageTokens" type="HBoxContainer" parent="VBoxContainer"]

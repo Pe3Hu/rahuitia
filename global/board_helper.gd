@@ -55,3 +55,10 @@ func get_pile_position_shift(pile_: CardPile, index_: int, direction_: Framework
 				position_shift.x -= pile_.stack_display_gap * pile_.max_stack_display
 	
 	return position_shift
+	
+func get_str_keyword(keyword_resource_: KeywordResource) -> String:
+	var result = FrameworkSettings.keyword_to_string[keyword_resource_.type].capitalize()
+	
+	if keyword_resource_.type == FrameworkSettings.KeywordType.CRAZED:
+		result += " " + str(keyword_resource_.valut_int)
+	return result

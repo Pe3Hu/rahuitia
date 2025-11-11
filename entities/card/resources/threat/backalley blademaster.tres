@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardThreatResource" load_steps=5 format=3 uid="uid://cdwttffgxi1rw"]
+
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="1_0qldb"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="1_jbxcy"]
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="3_0flct"]
+[ext_resource type="Resource" uid="uid://dc6l6f1d5ve2e" path="res://entities/token/keyword/rage.tres" id="3_jbxcy"]
+
+[resource]
+script = ExtResource("3_0flct")
+offensive = ExtResource("1_0qldb")
+keyword = ExtResource("3_jbxcy")
+aftermath = ExtResource("1_jbxcy")
+name = "backalley blademaster"
+metadata/_custom_type_script = "uid://buyqkpdqvrqke"

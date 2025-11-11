@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardThreatResource" load_steps=3 format=3 uid="uid://bg0qgwdclag0m"]
+
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="1_bcw02"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="1_t5r3j"]
+
+[resource]
+script = ExtResource("1_bcw02")
+offensive = ExtResource("1_t5r3j")
+danger = 1
+name = "ceresan thief"
+metadata/_custom_type_script = "uid://buyqkpdqvrqke"

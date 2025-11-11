@@ -25,6 +25,17 @@ BoardHelper="*res://global/board_helper.gd"
 window/size/viewport_width=1800
 window/size/viewport_height=900
 
+[file_customization]
+
+folder_colors={
+"res://entities/bank/": "yellow",
+"res://entities/board/": "green",
+"res://entities/card/": "red",
+"res://entities/pile/": "orange",
+"res://entities/tide/": "purple",
+"res://entities/token/": "blue"
+}
+
 [gui]
 
 theme/custom_font="uid://c3q2jgt5ywha7"

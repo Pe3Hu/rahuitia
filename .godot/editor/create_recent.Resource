@@ -1,0 +1,2 @@
+KeywordResource
+CardThreatResource

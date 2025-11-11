@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardThreatResource" load_steps=5 format=3 uid="uid://blna4mneqfgni"]
+
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="1_6waao"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="1_l2ltv"]
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="2_eqp7r"]
+[ext_resource type="Resource" uid="uid://lkfpwhotye6x" path="res://entities/token/keyword/fast.tres" id="3_cb0vp"]
+
+[resource]
+script = ExtResource("2_eqp7r")
+offensive = ExtResource("1_l2ltv")
+danger = 4
+keyword = ExtResource("3_cb0vp")
+aftermath = ExtResource("1_6waao")
+name = "junker cyclist"
+metadata/_custom_type_script = "uid://buyqkpdqvrqke"

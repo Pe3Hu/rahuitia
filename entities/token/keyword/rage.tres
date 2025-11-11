@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="KeywordResource" load_steps=2 format=3 uid="uid://dc6l6f1d5ve2e"]
+
+[ext_resource type="Script" uid="uid://b8xo3qx730c88" path="res://entities/token/keyword/keyword_resource.gd" id="1_nyfsu"]
+
+[resource]
+script = ExtResource("1_nyfsu")
+type = 1
+metadata/_custom_type_script = "uid://b8xo3qx730c88"

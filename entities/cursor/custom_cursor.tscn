@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c7p7cwkwbbmso" path="res://entities/cursor/custom_cursor.gd" id="2_feerx"]
 
 [node name="CustomCursor" type="Sprite2D"]
-z_index = 100
+z_index = 2000
 position = Vector2(1, 5)
 scale = Vector2(2, 2)
 texture = ExtResource("1_p0yfo")

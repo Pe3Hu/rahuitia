@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardThreatResource" load_steps=5 format=3 uid="uid://u684y020i8uk"]
+
+[ext_resource type="Resource" uid="uid://do3dkfwctevcj" path="res://entities/token/effect/armor_1.tres" id="1_ny5wd"]
+[ext_resource type="Resource" uid="uid://d03mm1tprieyc" path="res://entities/token/keyword/taunt.tres" id="2_ny5wd"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="2_voek5"]
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="3_voek5"]
+
+[resource]
+script = ExtResource("3_voek5")
+type = 1
+offensive = ExtResource("2_voek5")
+defensive = ExtResource("1_ny5wd")
+danger = 1
+keyword = ExtResource("2_ny5wd")
+name = "sporeling"
+metadata/_custom_type_script = "uid://buyqkpdqvrqke"

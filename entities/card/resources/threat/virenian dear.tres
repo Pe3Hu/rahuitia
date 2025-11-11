@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardThreatResource" load_steps=4 format=3 uid="uid://bak518jqlqd2p"]
+
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="1_np0oq"]
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="2_np0oq"]
+[ext_resource type="Resource" uid="uid://d03mm1tprieyc" path="res://entities/token/keyword/taunt.tres" id="2_t014l"]
+
+[resource]
+script = ExtResource("2_np0oq")
+type = 1
+offensive = ExtResource("1_np0oq")
+danger = 4
+keyword = ExtResource("2_t014l")
+name = "virenian dear"
+metadata/_custom_type_script = "uid://buyqkpdqvrqke"

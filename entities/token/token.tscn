@@ -1,10 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyr4dfy8qnwh6"]
+[gd_scene load_steps=5 format=3 uid="uid://cyr4dfy8qnwh6"]
 
-[ext_resource type="Texture2D" uid="uid://bppejqjuaenx1" path="res://entities/token/images/core/action.png" id="1_31fv7"]
+[ext_resource type="Shader" uid="uid://n5jpmcpyin0q" path="res://entities/token/token gradient.gdshader" id="1_4sigg"]
+[ext_resource type="Texture2D" uid="uid://bppejqjuaenx1" path="res://entities/token/images/type/action.png" id="1_31fv7"]
 [ext_resource type="Script" uid="uid://bkxk03iqtomwv" path="res://entities/token/token.gd" id="1_ujkdj"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clbbx"]
+shader = ExtResource("1_4sigg")
+shader_parameter/effect_filling = 1.0
+shader_parameter/angle = 90.00000402332398
+shader_parameter/keep_saturation = 0.0
+shader_parameter/keep_luminance = 0.0
+shader_parameter/color_start = Color(0, 0, 0, 1)
+shader_parameter/start_pos = 0.0
+shader_parameter/color_mid = Color(1, 1, 1, 1)
+shader_parameter/mid_pos = 0.5
+shader_parameter/color_end = Color(0, 0, 0, 1)
+shader_parameter/end_pos = 1.0
+shader_parameter/midpos_enabled = false
+shader_parameter/range_start = 0.0
+shader_parameter/range_end = 1.0
+shader_parameter/range_softedge = 0.1
+
 [node name="Token" type="TextureRect"]
-z_index = 1
+material = SubResource("ShaderMaterial_clbbx")
 custom_minimum_size = Vector2(32, 32)
 mouse_filter = 0
 texture = ExtResource("1_31fv7")
@@ -30,6 +48,7 @@ alignment = 1
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.541, 0.49, 1)
 text = "level-"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -34,7 +34,7 @@ func apply_effect(effect_resource_: EffectResource) -> void:
 	
 func add_damage_token(effect_resource_: EffectResource) -> void:
 	var token = token_scene.instantiate()
-	token.core = effect_resource_.type
+	token.type = effect_resource_.type
 	token.value_int = effect_resource_.value_int
 	token.bank = self
 	damage_tokens.add_child(token)
@@ -52,3 +52,21 @@ func reset_damage_tokens() -> void:
 		var token = damage_tokens.get_child(0)
 		damage_tokens.remove_child(token)
 		token.queue_free()
+	
+func remove_selected_damage_token() -> void:
+	damage_tokens.remove_child(selected_damage_token)
+	selected_damage_token.queue_free()
+	selected_damage_token = null
+	board.targeting_line.visible = false
+
+func can_drop_card(card_ : Card):
+	return action_token.value_int >= card_.core_resource.cost
+	
+func card_dropped(card_ : Card):
+	action_token.value_int -= card_.core_resource.cost
+	board.card_pile.set_card_pile(card_, FrameworkSettings.PileType.PLAY)
+	apply_default_effects(card_)
+	
+func apply_default_effects(card_ : Card) -> void:
+	for effect_resource in card_.core_resource.default_effects:
+		apply_effect(effect_resource)

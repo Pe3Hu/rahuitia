@@ -24,6 +24,6 @@ func init_tokens() -> void:
 	
 func add_token(effect_resource_: EffectResource) -> void:
 	var token = preload("res://entities/token/token.tscn").instantiate()
-	token.core = effect_resource_.type
+	token.type = effect_resource_.type
 	token.value_int = effect_resource_.value_int
 	result_tokens.add_child(token)

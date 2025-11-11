@@ -11,12 +11,12 @@ signal token_dropped
 
 @export var bank: Bank
 
-@export var core: FrameworkSettings.CoreType = FrameworkSettings.CoreType.DEFAULT:
+@export var type: FrameworkSettings.TokenType = FrameworkSettings.TokenType.DEFAULT:
 	set(value_):
-		core = value_
-		#FrameworkSettings.cor
-		if core != FrameworkSettings.CoreType.DEFAULT:
-			texture = load("res://entities/token/images/core/{path}.png".format({"path": FrameworkSettings.core_to_string[core]}))
+		type = value_
+		if type != FrameworkSettings.TokenType.DEFAULT:
+			update_colors()
+			texture = load("res://entities/token/images/type/{path}.png".format({"path": FrameworkSettings.token_to_string[type]}))
 @export var faction: FrameworkSettings.FactionType = FrameworkSettings.FactionType.DEFAULT:
 	set(value_):
 		faction = value_
@@ -28,6 +28,18 @@ signal token_dropped
 		value_int = value_
 		%ValueLabel.visible = value_int != -1
 		%ValueLabel.text = str(value_)
+@export var value_not_int: int = 0:
+	set(value_):
+		value_not_int = value_
+		%ValueLabel.visible = false#value_not_int == -1
+		update_colors()
+		#match type:
+			#FrameworkSettings.TokenType.DANGER:
+				#match value_not_int:
+					#FrameworkSettings.TokenType.DAMAGE:
+						#modulate = Color.DARK_RED
+					#FrameworkSettings.TokenType.ARMOR:
+						#modulate = Color.ROYAL_BLUE
 @export var condition: FrameworkSettings.ConditionType = FrameworkSettings.ConditionType.DEFAULT:
 	set(value_):
 		condition = value_
@@ -35,6 +47,10 @@ signal token_dropped
 		#%ConditionLabel.text = FrameworkSettings
 
 var is_selected: bool = false
+
+var angle: float = 90
+var shader_color_start: Color
+var shader_color_end: Color
 
 
 func _ready():
@@ -59,7 +75,7 @@ func switch_is_selected() -> void:
 		bank.board.custom_cursor.current_state = FrameworkSettings.CursorState.HOLD
 		bank.selected_damage_token = self
 		emit_signal("token_clicked")
-		z_index = 40
+		z_index = 101
 	else:
 		bank.board.custom_cursor.current_state = FrameworkSettings.CursorState.IDLE
 		bank.selected_damage_token = null
@@ -73,8 +89,7 @@ func _process(_delta):
 		#target_position.x += 180
 		#panel_container.position = target_position
 		bank.board.targeting_line.set_point_position(1, get_global_mouse_position() - bank.board.position)
-
-
+	
 func _on_mouse_entered() -> void:
 	if bank == null: return
 	bank.board.custom_cursor.current_state = FrameworkSettings.CursorState.SELECT
@@ -83,3 +98,81 @@ func _on_mouse_exited() -> void:
 	if bank == null: return
 	if is_selected: return
 	bank.board.custom_cursor.current_state = FrameworkSettings.CursorState.IDLE
+	
+func update_colors() -> void:
+	var max_h = 360.0
+	var h_start = 0.0
+	var h_end = 0.0
+	var s_start = 1.0
+	var s_end = 0.6
+	var v_start = 0.6
+	var v_end = 1.0
+	
+	match type:
+		FrameworkSettings.TokenType.ACTION:
+			h_start = 200.0
+			h_end = 220.0
+			angle = 0.0
+		FrameworkSettings.TokenType.ARMOR:
+			h_start = 200.0
+			h_end = 220.0
+			s_start = 0.4
+			s_end = 0.5
+			v_start = 0.4
+			v_end = 0.5
+			angle = 0.0
+		FrameworkSettings.TokenType.DEFENSIVE:
+			h_start = 200.0
+			h_end = 220.0
+			s_start = 0.4
+			s_end = 0.5
+			v_start = 0.4
+			v_end = 0.5
+			angle = 0.0
+		FrameworkSettings.TokenType.LEVEL:
+			h_start = 100.0
+			h_end = 120.0
+			angle = -60.0
+		FrameworkSettings.TokenType.CREDIT:
+			h_start = 50.0
+			h_end = 70.0
+			angle = -100.0
+		FrameworkSettings.TokenType.DAMAGE:
+			h_start = 40.0
+			h_end = 20.0
+			v_start = 0.9
+			angle = -30.0
+		FrameworkSettings.TokenType.OFFENSIVE:
+			h_start = 40.0
+			h_end = 20.0
+			angle = -30.0
+		FrameworkSettings.TokenType.HEALTH:
+			h_start = 340.0
+			h_end = 360.0
+			v_start = 0.9
+			angle = -30.0
+		FrameworkSettings.TokenType.DANGER:
+			match value_not_int:
+				FrameworkSettings.DangerType.DAMAGE:
+					h_start = 40.0
+					h_end = 20.0
+					angle = -30.0
+				FrameworkSettings.DangerType.ARMOR:
+					h_start = 200.0
+					h_end = 220.0
+					s_start = 0.4
+					s_end = 0.5
+					v_start = 0.4
+					v_end = 0.5
+					angle = 0.0
+					
+	
+	shader_color_start = Color.from_hsv(h_start / max_h, s_start, v_start)
+	shader_color_end = Color.from_hsv(h_end / max_h, s_end, v_end)
+	
+	material = ShaderMaterial.new()
+	material.shader = load("res://entities/token/token gradient.gdshader")
+	material.set_shader_parameter("color_start", shader_color_start)
+	material.set_shader_parameter("color_end", shader_color_end)
+	material.set_shader_parameter("angle", angle)
+	

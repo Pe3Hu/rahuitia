@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_b113v")
+cost = 1
 default_effects = Array[ExtResource("1_t6kaq")]([ExtResource("2_bj100")])
 name = "strike"
 metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

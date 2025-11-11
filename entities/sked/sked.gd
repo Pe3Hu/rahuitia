@@ -2,7 +2,7 @@ class_name Sked
 extends PanelContainer
 
 
-@export var operation_scene : PackedScene
+@export var operation_scene: PackedScene
 
 @export var card: Card
 @export var default_condition: ConditionResource
@@ -16,7 +16,7 @@ func init_operations() -> void:
 func init_default_operation() -> void:
 	var operation = preload("res://entities/sked/operation/operation.tscn").instantiate()
 	operations.add_child(operation)
-	operation.resource = OperationResource.new(default_condition, card.resource.default_effects)
+	operation.resource = OperationResource.new(default_condition, card.core_resource.default_effects)
 	
 	#for effects in card.resource.default_effects:
 		#add_operation(effects)

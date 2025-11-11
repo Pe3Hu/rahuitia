@@ -1,13 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bt2x5ecxjo2vu"]
+[gd_scene load_steps=14 format=3 uid="uid://bt2x5ecxjo2vu"]
 
 [ext_resource type="Script" uid="uid://d1hs1spbljla" path="res://entities/board/board.gd" id="1_46inl"]
 [ext_resource type="PackedScene" uid="uid://mhvnxqjo5wug" path="res://entities/bank/bank.tscn" id="2_cfpx4"]
-[ext_resource type="Script" uid="uid://cip5s2eeqh6pu" path="res://entities/dropzone/shell/shell_dropzone_enemy.gd" id="3_ynpsh"]
-[ext_resource type="Texture2D" uid="uid://b0ymf1fwfgbss" path="res://entities/board/images/enemy_crab.png" id="4_nv1xt"]
-[ext_resource type="Script" uid="uid://cocowg86swd54" path="res://entities/dropzone/shell/shell_dropzone_non-attack.gd" id="7_4haen"]
-[ext_resource type="Texture2D" uid="uid://bpjxsk1mxfl77" path="res://entities/card/images/1x1_#ffffffff.png" id="8_86uwj"]
+[ext_resource type="PackedScene" uid="uid://h52geka4oybg" path="res://entities/tide/tide.tscn" id="3_cfpx4"]
 [ext_resource type="Resource" uid="uid://b7ka3wtrjky5t" path="res://entities/deck/default_core_deck.tres" id="8_cfpx4"]
-[ext_resource type="Script" uid="uid://2qjlgq0qb717" path="res://entities/dropzone/pile/card_pile.gd" id="9_d6mq2"]
+[ext_resource type="Script" uid="uid://2qjlgq0qb717" path="res://entities/pile/card_pile.gd" id="9_d6mq2"]
 [ext_resource type="PackedScene" uid="uid://dscvkdwaqhv1j" path="res://entities/cursor/custom_cursor.tscn" id="10_46inl"]
 [ext_resource type="PackedScene" uid="uid://dn2ej8wtxey2u" path="res://entities/card/shell/shell_card.tscn" id="10_egn8s"]
 
@@ -38,7 +35,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Board" type="MarginContainer"]
-custom_minimum_size = Vector2(1600, 900)
+custom_minimum_size = Vector2(1700, 900)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -69,60 +66,20 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 board = NodePath("..")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="CrabCardDropzone" type="Control" parent="GridContainer" node_paths=PackedStringArray("bank", "card_pile")]
-layout_mode = 2
-script = ExtResource("3_ynpsh")
-hp = 75
-bank = NodePath("../../Bank")
-card_pile = NodePath("../../CardPile")
-
-[node name="Crab" type="TextureRect" parent="GridContainer/CrabCardDropzone"]
-layout_mode = 0
-offset_right = 168.0
-offset_bottom = 240.0
-texture = ExtResource("4_nv1xt")
-
-[node name="Label" type="Label" parent="GridContainer/CrabCardDropzone"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 168.0
-offset_right = 176.0
-offset_bottom = 191.0
-text = "30"
-horizontal_alignment = 1
-
 [node name="EndTurnButton" type="Button" parent="."]
+custom_minimum_size = Vector2(90, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_styles/focus = SubResource("StyleBoxTexture_cfpx4")
 text = "End Turn"
 
-[node name="BlockCardDropzone" type="Control" parent="." node_paths=PackedStringArray("bank", "card_pile")]
+[node name="Tide" parent="." node_paths=PackedStringArray("board") instance=ExtResource("3_cfpx4")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(800, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-mouse_filter = 1
-script = ExtResource("7_4haen")
-bank = NodePath("../Bank")
-card_pile = NodePath("../CardPile")
-
-[node name="TextureRect" type="TextureRect" parent="BlockCardDropzone"]
-modulate = Color(1, 1, 1, 0.101961)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_86uwj")
+board = NodePath("..")
 
 [node name="CardPile" type="Control" parent="." node_paths=PackedStringArray("bank")]
 unique_name_in_owner = true
@@ -135,29 +92,13 @@ bank = NodePath("../Bank")
 default_core_deck = ExtResource("8_cfpx4")
 card_scene = ExtResource("10_egn8s")
 draw_position = Vector2(20, 40)
-hand_position = null
-play_position = null
+hand_position = Vector2(650, 500)
 discard_position = Vector2(20, 460)
-stack_display_gap = null
-max_stack_display = null
-card_return_speed = null
-click_draw_pile_to_draw = null
-cant_draw_at_hand_limit = null
-shuffle_discard_on_empty_draw = null
-draw_direction = null
-hand_enabled = null
-hand_face_up = null
-max_hand_size = null
-max_hand_spread = null
-card_hover_distance = null
+max_stack_display = 0
+click_draw_pile_to_draw = false
 drag_when_clicked = false
 hand_rotation_curve = SubResource("Curve_noha0")
 hand_vertical_curve = SubResource("Curve_7lcs2")
-discard_face_up = null
-discard_layout = null
-play_stack_display_gap = null
-play_face_up = null
-play_layout = null
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
@@ -176,7 +117,7 @@ text = "Card Description here"
 [node name="TargetingLine2D" type="Line2D" parent="."]
 unique_name_in_owner = true
 visible = false
-z_index = 2
+z_index = 100
 points = PackedVector2Array(0, 0, 100, 0)
 width_curve = SubResource("Curve_mm80a")
 

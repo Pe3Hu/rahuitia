@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://h52geka4oybg"]
+
+[ext_resource type="PackedScene" uid="uid://btlna086ij3wl" path="res://entities/tide/threat/threat_dropzone.tscn" id="1_0nsie"]
+[ext_resource type="Script" uid="uid://c3j0ocp1pmyxa" path="res://entities/tide/tide.gd" id="1_nepwd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepwd"]
+bg_color = Color(0.6, 0.6, 0.6, 0.46666667)
+
+[node name="Tide" type="PanelContainer"]
+custom_minimum_size = Vector2(916, 428)
+theme_override_styles/panel = SubResource("StyleBoxFlat_nepwd")
+script = ExtResource("1_nepwd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Threats" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="ThreatDropzone1" parent="MarginContainer/Threats" node_paths=PackedStringArray("tide") instance=ExtResource("1_0nsie")]
+unique_name_in_owner = true
+layout_mode = 2
+tide = NodePath("../../..")
+
+[node name="ThreatDropzone2" parent="MarginContainer/Threats" node_paths=PackedStringArray("tide") instance=ExtResource("1_0nsie")]
+unique_name_in_owner = true
+layout_mode = 2
+tide = NodePath("../../..")
+
+[node name="ThreatDropzone3" parent="MarginContainer/Threats" node_paths=PackedStringArray("tide") instance=ExtResource("1_0nsie")]
+unique_name_in_owner = true
+layout_mode = 2
+tide = NodePath("../../..")
+
+[node name="ThreatDropzone4" parent="MarginContainer/Threats" node_paths=PackedStringArray("tide") instance=ExtResource("1_0nsie")]
+unique_name_in_owner = true
+layout_mode = 2
+tide = NodePath("../../..")
+
+[node name="ThreatDropzone5" parent="MarginContainer/Threats" node_paths=PackedStringArray("tide") instance=ExtResource("1_0nsie")]
+unique_name_in_owner = true
+layout_mode = 2
+tide = NodePath("../../..")
+
+[node name="ThreatDropzone6" parent="MarginContainer/Threats" node_paths=PackedStringArray("tide") instance=ExtResource("1_0nsie")]
+unique_name_in_owner = true
+layout_mode = 2
+tide = NodePath("../../..")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

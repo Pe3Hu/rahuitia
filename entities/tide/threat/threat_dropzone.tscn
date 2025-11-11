@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btlna086ij3wl"]
+
+[ext_resource type="Script" uid="uid://cip5s2eeqh6pu" path="res://entities/tide/threat/threat_dropzone.gd" id="1_8eol2"]
+
+[node name="ThreatDropzone" type="PanelContainer"]
+visible = false
+custom_minimum_size = Vector2(300, 210)
+mouse_filter = 1
+script = ExtResource("1_8eol2")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
