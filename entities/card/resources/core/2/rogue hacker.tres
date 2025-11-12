@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://disb8xb8ho486"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_p6phw"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_qg8mk"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_5epkc"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="3_ohqou"]
+[ext_resource type="Resource" uid="uid://d1j7sn3fxx5pm" path="res://entities/token/effect/action_1.tres" id="4_shn48"]
+
+[resource]
+script = ExtResource("3_5epkc")
+level = 2
+type = 2
+faction = 4
+cost = 2
+default_effects = Array[ExtResource("1_p6phw")]([ExtResource("3_ohqou"), ExtResource("4_shn48")])
+name = "rogue hacker"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

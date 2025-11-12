@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://n75aw6b40hx"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_8r1tf"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="2_mvvnl"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_vp01v"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_nktja"]
+[ext_resource type="Resource" uid="uid://dvlffb2h3v04g" path="res://entities/token/condition/conspire_1.tres" id="4_fl7xg"]
+[ext_resource type="Resource" uid="uid://b610e2fa07ksi" path="res://entities/token/effect/damage_6.tres" id="5_nvs5y"]
+[ext_resource type="Resource" uid="uid://cerk3m5ijej7a" path="res://entities/token/effect/armor_2.tres" id="6_vd5eh"]
+
+[resource]
+script = ExtResource("3_nktja")
+level = 2
+faction = 3
+cost = 3
+default_effects = Array[ExtResource("1_8r1tf")]([ExtResource("5_nvs5y"), ExtResource("6_vd5eh")])
+conditions = Array[ExtResource("2_vp01v")]([ExtResource("4_fl7xg")])
+condition_effects = Array[ExtResource("1_8r1tf")]([ExtResource("2_mvvnl")])
+name = "lessons from a blademaster"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

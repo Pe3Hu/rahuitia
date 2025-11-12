@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt2x5ecxjo2vu"]
+[gd_scene load_steps=15 format=3 uid="uid://bt2x5ecxjo2vu"]
 
 [ext_resource type="Script" uid="uid://d1hs1spbljla" path="res://entities/board/board.gd" id="1_46inl"]
 [ext_resource type="PackedScene" uid="uid://mhvnxqjo5wug" path="res://entities/bank/bank.tscn" id="2_cfpx4"]
 [ext_resource type="PackedScene" uid="uid://h52geka4oybg" path="res://entities/tide/tide.tscn" id="3_cfpx4"]
-[ext_resource type="Resource" uid="uid://b7ka3wtrjky5t" path="res://entities/deck/default_core_deck.tres" id="8_cfpx4"]
+[ext_resource type="PackedScene" uid="uid://cb5sypr4m3hap" path="res://entities/library/library.tscn" id="4_56qjt"]
+[ext_resource type="Resource" uid="uid://b7ka3wtrjky5t" path="res://entities/deck/default_deck.tres" id="8_cfpx4"]
 [ext_resource type="Script" uid="uid://2qjlgq0qb717" path="res://entities/pile/card_pile.gd" id="9_d6mq2"]
 [ext_resource type="PackedScene" uid="uid://dscvkdwaqhv1j" path="res://entities/cursor/custom_cursor.tscn" id="10_46inl"]
 [ext_resource type="PackedScene" uid="uid://dn2ej8wtxey2u" path="res://entities/card/shell/shell_card.tscn" id="10_egn8s"]
@@ -79,6 +80,13 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+board = NodePath("..")
+
+[node name="Library" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_56qjt")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 board = NodePath("..")
 
 [node name="CardPile" type="Control" parent="." node_paths=PackedStringArray("bank")]

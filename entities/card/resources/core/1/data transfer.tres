@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://c0o4bvxdadfuc"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_ltiss"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_mym5b"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="2_weugx"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_weugx"]
+[ext_resource type="Resource" uid="uid://suk1ayxnneca" path="res://entities/token/condition/unite_3.tres" id="4_5vv20"]
+
+[resource]
+script = ExtResource("3_weugx")
+level = 1
+faction = 1
+default_effects = Array[ExtResource("1_ltiss")]([ExtResource("2_weugx")])
+conditions = Array[ExtResource("2_mym5b")]([ExtResource("4_5vv20")])
+condition_effects = Array[ExtResource("1_ltiss")]([ExtResource("2_weugx")])
+name = "data transfer"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

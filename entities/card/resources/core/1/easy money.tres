@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://uxbt5sqlcow"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_ppbwq"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="2_7l6uq"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_ht21l"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_i1sd3"]
+[ext_resource type="Resource" uid="uid://4octyqh4svqj" path="res://entities/token/effect/credit_2.tres" id="4_gam71"]
+[ext_resource type="Resource" uid="uid://b16a4fi5fwylx" path="res://entities/token/condition/modification_1.tres" id="4_vo7m4"]
+
+[resource]
+script = ExtResource("3_i1sd3")
+level = 1
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_ppbwq")]([ExtResource("4_gam71")])
+conditions = Array[ExtResource("2_ht21l")]([ExtResource("4_vo7m4")])
+condition_effects = Array[ExtResource("1_ppbwq")]([ExtResource("2_7l6uq")])
+name = "easy money"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

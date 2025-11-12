@@ -3,7 +3,7 @@ class_name ShellCard
 extends Card
 
 
-#region var
+
 # these are custom variables they will be set with data from *collection.json
 #@export var value : int
 #@export var type : String
@@ -33,17 +33,7 @@ extends Card
 
 @onready var sked = %Sked
 
-var state: FrameworkSettings.SideState = FrameworkSettings.SideState.FRIENDLY:
-	set(value_):
-		state = value_
-		#size = Vector2()
-		#
-		#match state:
-			#FrameworkSettings.SideState.FRIENDLY:
-				#pass
-			#FrameworkSettings.SideState.HOSTILE:
-				#pass
-#endregion
+var state: FrameworkSettings.SideState = FrameworkSettings.SideState.FRIENDLY
 
 
 func _ready():
@@ -111,7 +101,6 @@ func update_threat_health_token() -> void:
 	threat_health_token.value_int = threat_resource.health_int - threat_resource.wound_int
 	
 func switch_side() -> void:
-	
 	match state:
 		FrameworkSettings.SideState.HOSTILE:
 			state = FrameworkSettings.SideState.FRIENDLY

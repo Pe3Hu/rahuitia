@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://dsjih7q1gflk1"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_6rfi4"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_05ohe"]
+[ext_resource type="Resource" uid="uid://bxn3r514byjv0" path="res://entities/token/effect/sale_3.tres" id="2_dcecl"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_s1crl"]
+[ext_resource type="Resource" uid="uid://hnyrdrcxeyxa" path="res://entities/token/condition/bargain_3.tres" id="4_1esut"]
+[ext_resource type="Resource" uid="uid://4octyqh4svqj" path="res://entities/token/effect/credit_2.tres" id="5_hl53c"]
+
+[resource]
+script = ExtResource("3_s1crl")
+level = 3
+faction = 4
+cost = 2
+default_effects = Array[ExtResource("1_6rfi4")]([ExtResource("5_hl53c")])
+conditions = Array[ExtResource("2_05ohe")]([ExtResource("4_1esut")])
+condition_effects = Array[ExtResource("1_6rfi4")]([ExtResource("2_dcecl")])
+name = "retrun a favor"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

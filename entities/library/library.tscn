@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb5sypr4m3hap"]
+
+[ext_resource type="Script" uid="uid://dg1n4nqomnsvs" path="res://entities/library/library.gd" id="1_ef650"]
+[ext_resource type="PackedScene" uid="uid://b2pdum1iv6pga" path="res://entities/library/scroll/scroll_dropzone.tscn" id="2_jwbxr"]
+[ext_resource type="PackedScene" uid="uid://d0t7xys8y7gml" path="res://entities/library/pedestal/pedestal.tscn" id="3_127tn"]
+
+[node name="Library" type="PanelContainer"]
+z_index = 1001
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -150.0
+offset_right = 105.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ef650")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Cardzones" type="HBoxContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ScrollDropzone1" parent="VBox/Cardzones" node_paths=PackedStringArray("library") instance=ExtResource("2_jwbxr")]
+unique_name_in_owner = true
+visible = true
+layout_mode = 2
+library = NodePath("../../..")
+
+[node name="ScrollDropzone2" parent="VBox/Cardzones" node_paths=PackedStringArray("library") instance=ExtResource("2_jwbxr")]
+unique_name_in_owner = true
+visible = true
+layout_mode = 2
+library = NodePath("../../..")
+level_int = 2
+
+[node name="ScrollDropzone3" parent="VBox/Cardzones" node_paths=PackedStringArray("library") instance=ExtResource("2_jwbxr")]
+unique_name_in_owner = true
+layout_mode = 2
+library = NodePath("../../..")
+level_int = 3
+
+[node name="ScrollDropzone4" parent="VBox/Cardzones" node_paths=PackedStringArray("library") instance=ExtResource("2_jwbxr")]
+unique_name_in_owner = true
+layout_mode = 2
+library = NodePath("../../..")
+level_int = 4
+
+[node name="ScrollDropzone5" parent="VBox/Cardzones" node_paths=PackedStringArray("library") instance=ExtResource("2_jwbxr")]
+unique_name_in_owner = true
+layout_mode = 2
+library = NodePath("../../..")
+level_int = 5
+
+[node name="Pedestal" parent="VBox" node_paths=PackedStringArray("library") instance=ExtResource("3_127tn")]
+unique_name_in_owner = true
+layout_mode = 2
+library = NodePath("../..")

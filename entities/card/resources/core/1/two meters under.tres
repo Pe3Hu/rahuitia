@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=5 format=3 uid="uid://b18cnhnqngwp4"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_omxce"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_18fsw"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="3_18fsw"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_e3opu"]
+
+[resource]
+script = ExtResource("3_e3opu")
+level = 1
+faction = 3
+cost = 1
+default_effects = Array[ExtResource("1_omxce")]([ExtResource("3_18fsw")])
+name = "two meters under"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

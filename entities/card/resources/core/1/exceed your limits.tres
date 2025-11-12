@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://b2ivmyjf7t52g"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_w4oet"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="2_ctx0v"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="3_n1wj2"]
+[ext_resource type="Resource" uid="uid://b53cull30x8ev" path="res://entities/token/condition/wounded_5.tres" id="4_mgdia"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="5_umr6w"]
+
+[resource]
+script = ExtResource("5_umr6w")
+level = 1
+faction = 3
+cost = 1
+conditions = Array[ExtResource("3_n1wj2")]([ExtResource("4_mgdia")])
+condition_effects = Array[ExtResource("1_w4oet")]([ExtResource("2_ctx0v")])
+name = "exceed your limits"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

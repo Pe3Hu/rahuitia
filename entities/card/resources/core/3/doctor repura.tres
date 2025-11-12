@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://dr18xsqfaj3kc"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_yo7tx"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_1tpk4"]
+[ext_resource type="Resource" uid="uid://b6x0024r0cwy8" path="res://entities/token/effect/refresh_1.tres" id="2_glvyj"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_1ccmy"]
+[ext_resource type="Resource" uid="uid://dvlffb2h3v04g" path="res://entities/token/condition/conspire_1.tres" id="4_82deg"]
+[ext_resource type="Resource" uid="uid://babevoq7crb3g" path="res://entities/token/effect/heal_1.tres" id="5_gedb5"]
+
+[resource]
+script = ExtResource("3_1ccmy")
+level = 3
+type = 2
+faction = 2
+cost = 2
+default_effects = Array[ExtResource("1_yo7tx")]([ExtResource("5_gedb5")])
+conditions = Array[ExtResource("2_1tpk4")]([ExtResource("4_82deg")])
+condition_effects = Array[ExtResource("1_yo7tx")]([ExtResource("2_glvyj")])
+name = "doctor repura"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

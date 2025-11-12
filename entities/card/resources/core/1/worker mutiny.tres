@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://cmsd8lv0agvgt"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_q6fee"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_2yn3t"]
+[ext_resource type="Resource" uid="uid://cc4utgk3lccag" path="res://entities/token/effect/refresh_focus.tres" id="2_mcxke"]
+[ext_resource type="Resource" uid="uid://dpd7mva4vc8fd" path="res://entities/token/condition/focus_x.tres" id="3_mcxke"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ujtra"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="4_oth2q"]
+
+[resource]
+script = ExtResource("3_ujtra")
+level = 1
+faction = 2
+cost = 2
+default_effects = Array[ExtResource("1_q6fee")]([ExtResource("4_oth2q")])
+conditions = Array[ExtResource("2_2yn3t")]([ExtResource("3_mcxke")])
+condition_effects = Array[ExtResource("1_q6fee")]([ExtResource("2_mcxke")])
+name = "worker mutiny"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

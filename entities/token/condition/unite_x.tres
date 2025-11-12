@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_xbtpo")
-type = "unite"
-value_str = "x"
+type = 3
+value_not_int = 1
 metadata/_custom_type_script = "uid://72gegbx4ks4"

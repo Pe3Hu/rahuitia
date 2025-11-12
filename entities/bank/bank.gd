@@ -19,6 +19,11 @@ var selected_damage_token: Token
 #endregion
 
 
+#region effect
+func apply_default_effects(card_ : Card) -> void:
+	for effect_resource in card_.core_resource.default_effects:
+		apply_effect(effect_resource)
+	
 func apply_effect(effect_resource_: EffectResource) -> void:
 	match effect_resource_.type:
 		FrameworkSettings.EffectType.DAMAGE:
@@ -38,7 +43,9 @@ func add_damage_token(effect_resource_: EffectResource) -> void:
 	token.value_int = effect_resource_.value_int
 	token.bank = self
 	damage_tokens.add_child(token)
-	
+#endregion
+
+#region reset
 func end_of_turn() -> void:
 	reset_tokens()
 	
@@ -58,7 +65,19 @@ func remove_selected_damage_token() -> void:
 	selected_damage_token.queue_free()
 	selected_damage_token = null
 	board.targeting_line.visible = false
+	
+func apply_income_damage(income_damage_: int) -> void:
+	var after_block_damage = income_damage_ - min(income_damage_, armor_token.value_int)
+	health_token.value_int -= after_block_damage
+	detect_gameover()
+	
+func detect_gameover() -> void:
+	if health_token.value_int > 0: return
+	health_token.value_int = 0
+	pass
+#endregion
 
+#region card
 func can_drop_card(card_ : Card):
 	return action_token.value_int >= card_.core_resource.cost
 	
@@ -66,7 +85,4 @@ func card_dropped(card_ : Card):
 	action_token.value_int -= card_.core_resource.cost
 	board.card_pile.set_card_pile(card_, FrameworkSettings.PileType.PLAY)
 	apply_default_effects(card_)
-	
-func apply_default_effects(card_ : Card) -> void:
-	for effect_resource in card_.core_resource.default_effects:
-		apply_effect(effect_resource)
+#endregion

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DeckResource" load_steps=14 format=3 uid="uid://c3qv0nlsqo40r"]
+
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="1_7qhu1"]
+[ext_resource type="Script" uid="uid://crulyl6kcnd1q" path="res://entities/deck/deck_resource.gd" id="2_kode1"]
+[ext_resource type="Resource" uid="uid://cw1mdhlmtpug" path="res://entities/card/resources/core/3/a blade in the dark.tres" id="2_yn2o5"]
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="3_f20s7"]
+[ext_resource type="Resource" uid="uid://cmbxay5ap6p2a" path="res://entities/card/resources/core/3/admiral's favor.tres" id="3_vq5tt"]
+[ext_resource type="Resource" uid="uid://dr18xsqfaj3kc" path="res://entities/card/resources/core/3/doctor repura.tres" id="4_i4t0w"]
+[ext_resource type="Resource" uid="uid://s2y6185cj2rp" path="res://entities/card/resources/core/3/family secret.tres" id="5_xiii4"]
+[ext_resource type="Resource" uid="uid://bxoygjs6emeep" path="res://entities/card/resources/core/3/gadwick loss prevention.tres" id="6_5ueov"]
+[ext_resource type="Resource" uid="uid://d0akh0u5l325k" path="res://entities/card/resources/core/3/national target.tres" id="7_isecu"]
+[ext_resource type="Resource" uid="uid://dsjih7q1gflk1" path="res://entities/card/resources/core/3/retrun a favor.tres" id="8_bdy2v"]
+[ext_resource type="Resource" uid="uid://bqjy5pab58jdw" path="res://entities/card/resources/core/3/royal armorer.tres" id="9_6by8m"]
+[ext_resource type="Resource" uid="uid://dhtjkd8uomc66" path="res://entities/card/resources/core/3/unleash your streangth.tres" id="10_6r3sd"]
+[ext_resource type="Resource" uid="uid://31iaqeotr7dl" path="res://entities/card/resources/core/3/viren strategy.tres" id="11_i0gq8"]
+
+[resource]
+script = ExtResource("2_kode1")
+core_cards = Array[ExtResource("1_7qhu1")]([ExtResource("2_yn2o5"), ExtResource("3_vq5tt"), ExtResource("4_i4t0w"), ExtResource("5_xiii4"), ExtResource("6_5ueov"), ExtResource("7_isecu"), ExtResource("8_bdy2v"), ExtResource("9_6by8m"), ExtResource("10_6r3sd"), ExtResource("11_i0gq8")])
+metadata/_custom_type_script = "uid://crulyl6kcnd1q"

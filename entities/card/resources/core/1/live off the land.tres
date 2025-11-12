@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://kl7ejoo3s3h0"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_xpdn1"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_jbdby"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="3_kf3n8"]
+[ext_resource type="Resource" uid="uid://djioungf7o601" path="res://entities/token/effect/credit_focus.tres" id="4_xcnb8"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="5_ec76o"]
+
+[resource]
+script = ExtResource("5_ec76o")
+level = 1
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_xpdn1")]([ExtResource("3_kf3n8"), ExtResource("4_xcnb8")])
+name = "live off the land"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

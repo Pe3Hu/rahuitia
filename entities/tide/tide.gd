@@ -2,6 +2,7 @@ class_name Tide
 extends PanelContainer
 
 
+#region var
 @export var board: Board
 
 @onready var threat_dropzones: = [
@@ -16,10 +17,11 @@ extends PanelContainer
 var active_dropzones_threats: Array[ThreatCardDropzone]
 var is_refilled: bool = false
 var is_mouse_inside: bool = false
-
+#endregion
 
 
 func end_of_turn() -> void:
+	apply_threat_damages()
 	refill_threat_dropzones()
 	
 func refill_threat_dropzones() -> void:
@@ -47,6 +49,15 @@ func get_free_threat_dropzone() -> ThreatCardDropzone:
 	if active_dropzones_threats.size() == threat_dropzones.size(): return null
 	var index = active_dropzones_threats.size()
 	return threat_dropzones[index]
+	
+func apply_threat_damages() -> void:
+	var income_damage = 0
+	
+	for threat_dropzone in active_dropzones_threats:
+		var card = threat_dropzone.get_child(0)
+		income_damage += card.threat_resource.damage_int
+	
+	board.bank.apply_income_damage(income_damage)
 	
 func _on_mouse_entered() -> void:
 	is_mouse_inside = true

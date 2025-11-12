@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://31iaqeotr7dl"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_yt5jg"]
+[ext_resource type="Resource" uid="uid://b1enf323tm7r7" path="res://entities/token/effect/damage_focus.tres" id="2_5c2en"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="3_rlrq2"]
+[ext_resource type="Resource" uid="uid://dpd7mva4vc8fd" path="res://entities/token/condition/focus_x.tres" id="4_otbp4"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="5_sb2fp"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="6_t02pt"]
+
+[resource]
+script = ExtResource("6_t02pt")
+level = 3
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_yt5jg")]([ExtResource("5_sb2fp")])
+conditions = Array[ExtResource("3_rlrq2")]([ExtResource("4_otbp4")])
+condition_effects = Array[ExtResource("1_yt5jg")]([ExtResource("2_5c2en")])
+name = "viren strategy"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

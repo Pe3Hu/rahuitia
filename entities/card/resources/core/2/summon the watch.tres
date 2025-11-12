@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://5wrxdnbytnqs"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_hgsh5"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_8soln"]
+[ext_resource type="Resource" uid="uid://b6x0024r0cwy8" path="res://entities/token/effect/refresh_1.tres" id="2_sk5q3"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_hc10c"]
+[ext_resource type="Resource" uid="uid://suk1ayxnneca" path="res://entities/token/condition/unite_3.tres" id="3_sk5q3"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="4_uumt5"]
+
+[resource]
+script = ExtResource("3_hc10c")
+level = 2
+faction = 1
+cost = 2
+default_effects = Array[ExtResource("1_hgsh5")]([ExtResource("4_uumt5")])
+conditions = Array[ExtResource("2_8soln")]([ExtResource("3_sk5q3")])
+condition_effects = Array[ExtResource("1_hgsh5")]([ExtResource("2_sk5q3")])
+name = "summon the watch"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

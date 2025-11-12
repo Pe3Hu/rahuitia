@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://bqi5wlbdus3rr"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_yq2yu"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_4ib3t"]
+[ext_resource type="Resource" uid="uid://bxn3r514byjv0" path="res://entities/token/effect/sale_3.tres" id="2_eg8or"]
+[ext_resource type="Resource" uid="uid://hnyrdrcxeyxa" path="res://entities/token/condition/bargain_3.tres" id="3_eg8or"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="4_4gt7w"]
+
+[resource]
+script = ExtResource("4_4gt7w")
+level = 1
+faction = 4
+conditions = Array[ExtResource("2_4ib3t")]([ExtResource("3_eg8or")])
+condition_effects = Array[ExtResource("1_yq2yu")]([ExtResource("2_eg8or")])
+name = "scrounge"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

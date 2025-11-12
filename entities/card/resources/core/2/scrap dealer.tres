@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://b6pn2jqd44wc6"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_m48hd"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_ljgd5"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="2_utc7x"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_mpwti"]
+[ext_resource type="Resource" uid="uid://dvlffb2h3v04g" path="res://entities/token/condition/conspire_1.tres" id="4_jciqk"]
+[ext_resource type="Resource" uid="uid://4octyqh4svqj" path="res://entities/token/effect/credit_2.tres" id="5_j5ibp"]
+
+[resource]
+script = ExtResource("3_mpwti")
+level = 2
+type = 2
+faction = 4
+cost = 2
+default_effects = Array[ExtResource("1_m48hd")]([ExtResource("5_j5ibp")])
+conditions = Array[ExtResource("2_ljgd5")]([ExtResource("4_jciqk")])
+condition_effects = Array[ExtResource("1_m48hd")]([ExtResource("2_utc7x")])
+name = "scrap dealer"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

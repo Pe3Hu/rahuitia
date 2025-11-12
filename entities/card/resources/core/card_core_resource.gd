@@ -8,3 +8,5 @@ extends CardResource
 @export var cost: int = 0
 
 @export var default_effects: Array[EffectResource]
+@export var conditions: Array[ConditionResource]
+@export var condition_effects: Array[EffectResource]

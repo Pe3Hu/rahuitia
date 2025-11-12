@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_hckvr")
-type = "backstab"
+type = 8
 value_int = 1
 metadata/_custom_type_script = "uid://72gegbx4ks4"

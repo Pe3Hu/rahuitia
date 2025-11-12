@@ -6,6 +6,10 @@ const STARTING_CREDIT: int = 3
 const TURN_ACTION: int = 3
 const STARTING_CARD: int = 3
 
+var TEMPORARY_LEVEL: int = 1
+var PERMANENT_LEVEL: int = 1
+const PEDESTAL_CARD: int = 3
+
 
 #region pile enum
 enum PileType {
@@ -67,11 +71,14 @@ enum ConditionType {
 	BARGAIN = 6,
 	MODIFICATION = 7,
 	BACKSTAB = 8,
+	ARSENAL = 9,
+	SACRIFICE = 10,
+	FORGE = 11,
 }
 
 enum ConditionValue {
 	DEFAULT = 0,
-	X = 1,
+	ANY = 1,
 	A = 2,
 	B = 3,
 	C = 4
@@ -87,7 +94,10 @@ enum TokenType {
 	ACTION = 3,
 	ARMOR = 4,
 	HEALTH = 5,
-	SACRIFICE = 6,
+	SACRIFICE = 10,
+	SALE = 11,
+	KILL = 12,
+	AMBUSH = 13,
 	
 	DANGER = 100,
 	OFFENSIVE = 101,
@@ -118,14 +128,24 @@ enum EffectType {
 	ACTION = 3,
 	ARMOR = 4,
 	HEAL = 5,
-	SACRIFICE = 6,
+	REFRESH = 6,
 	TRAIN = 7,
-	AOE = 8
+	AOE = 8,
+	TRASH = 9,
+	SACRIFICE = 10,
+	SALE = 11,
+	KILL = 12,
+	AMBUSH = 13,
 }
 
 enum EffectValue {
 	DEFAULT = 0,
-	FOCUS = 1
+	ONDECK = 1,
+	ANY = 2,
+	UNITE = 3,
+	FOCUS = 5,
+	SACRIFICE = 10,
+	MODIFICATION = 7,
 }
 #endregion
 

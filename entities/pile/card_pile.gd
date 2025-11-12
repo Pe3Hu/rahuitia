@@ -76,7 +76,56 @@ var discard_cards: Array[Card]
 var spread_curve:  = Curve.new()
 
 
-#region set get card
+#region reset
+func _ready() -> void:
+	size = Vector2.ZERO
+	spread_curve.add_point(Vector2(0, -1), 0, 0, Curve.TANGENT_LINEAR, Curve.TANGENT_LINEAR)
+	spread_curve.add_point(Vector2(1, 1), 0, 0, Curve.TANGENT_LINEAR, Curve.TANGENT_LINEAR)
+	reset_card_collection()
+	reset_target_positions()
+	
+	#bank.board.library.init_scroll_core_cards()
+	
+func reset_card_collection() -> void:
+	for child in get_children():
+		remove_card_from_piles(child)
+		maybe_remove_card_from_any_dropzones(child)
+		remove_card_from_game(child)
+	
+	init_core_cards()
+	
+	set_draw_target_positions(true)
+	emit_signal("draw_updated")
+	emit_signal("hand_updated")
+	emit_signal("play_updated")
+	emit_signal("discard_updated")
+	
+func init_core_cards() -> void:
+	for _i in default_core_deck.core_cards.size():
+		var core_card_resource = default_core_deck.core_cards[_i]
+		var card = create_card_in_pile(core_card_resource, FrameworkSettings.PileType.DRAW)
+		var threat_card_resource = default_core_deck.threat_cards[_i]
+		card.set_threat_resource(threat_card_resource)
+		#var card = create_card(card_resource)
+		#draw_cards.push_back(card)
+	
+	draw_cards.shuffle()
+	
+func reset() -> void:
+	reset_card_collection()
+	
+func load_json_cards_from_path(path : String) -> Array:
+	var found = []
+	if path:
+		var json_as_text = FileAccess.get_file_as_string(path)
+		var json_as_dict = JSON.parse_string(json_as_text)
+		if json_as_dict:
+			for character in json_as_dict:
+				found.push_back(character)
+	return found
+#endregion
+
+#region set get
 # this is really the only way we should move cards between piles
 func set_card_pile(card_: Card, pile_type_: FrameworkSettings.PileType) -> void:
 	remove_card_from_piles(card_)
@@ -145,17 +194,29 @@ func get_card_pile_size(pile_type_: FrameworkSettings.PileType) -> int:
 			return draw_cards.size()
 	
 	return 0
+	
+func get_card_dropzone(card : Card) -> Variant:
+	var all_dropzones:  = []
+	get_dropzones(get_tree().get_root(), "CardDropzone", all_dropzones)
+	for dropzone in all_dropzones:
+		if dropzone.is_holding(card):
+			return dropzone
+	return null
+	
+func get_dropzones(node: Node, className : String, result : Array) -> void:
+	if node is CardDropzone:
+		result.push_back(node)
+	for child in node.get_children():
+		get_dropzones(child, className, result)
 #endregion
 
+#region create remove
 func remove_card_from_game(card : Card) -> void:
 	remove_card_from_piles(card)
 	maybe_remove_card_from_any_dropzones(card)
 	emit_signal("card_removed_from_game", card)
 	card.queue_free()
 	reset_target_positions()
-	
-func is_hand_enabled() -> bool:
-	return hand_enabled
 	
 func remove_card_from_piles(card_: Card) -> void:
 	if hand_cards.find(card_) != -1:
@@ -201,65 +262,34 @@ func maybe_remove_card_from_any_dropzones(card : Card) -> void:
 			dropzone.remove_card(card)
 			emit_signal("card_removed_from_dropzone", dropzone, card)
 	
-func get_card_dropzone(card : Card) -> Variant:
-	var all_dropzones:  = []
-	get_dropzones(get_tree().get_root(), "CardDropzone", all_dropzones)
-	for dropzone in all_dropzones:
-		if dropzone.is_holding(card):
-			return dropzone
-	return null
+func create_card(card_core_resource_: CardResource) -> Card:
+	var card = card_scene.instantiate()
+	card.frontface_texture = "res://entities/card/images/card_empty.png"
+	card.backface_texture = "res://entities/card/images/card_back.png"
+	card.return_speed = card_return_speed
+	card.hover_distance = card_hover_distance
+	card.drag_when_clicked = drag_when_clicked
 	
-func get_dropzones(node: Node, className : String, result : Array) -> void:
-	if node is CardDropzone:
-		result.push_back(node)
-	for child in node.get_children():
-		get_dropzones(child, className, result)
+	card.core_resource = card_core_resource_
+	#card.resource = ResourceLoader.load(json_data.resource_script_path).new()
+	#for key in json_data.keys() -> void:
+		#if key != "texture_path" and key != "backface_texture_path" and key != "resource_script_path":
+			#card.card_data[key] = json_data[key]
+	card.connect("card_hovered", func(a) -> void: emit_signal("card_hovered", a))
+	card.connect("card_unhovered", func(a) -> void: emit_signal("card_unhovered", a))
+	card.connect("card_clicked", func(a) -> void: emit_signal("card_clicked", a))
+	card.connect("card_dropped", func(a) -> void: emit_signal("card_dropped", a))
+	card.board = bank.board
+	add_child(card)
+	return card
 	
-func load_json_cards_from_path(path : String) -> Array:
-	var found = []
-	if path:
-		var json_as_text = FileAccess.get_file_as_string(path)
-		var json_as_dict = JSON.parse_string(json_as_text)
-		if json_as_dict:
-			for character in json_as_dict:
-				found.push_back(character)
-	return found
-	
-func reset() -> void:
-	reset_card_collection()
-	
-func reset_card_collection() -> void:
-	for child in get_children():
-		remove_card_from_piles(child)
-		maybe_remove_card_from_any_dropzones(child)
-		remove_card_from_game(child)
-	
-	init_core_cards()
-	
-	set_draw_target_positions(true)
-	emit_signal("draw_updated")
-	emit_signal("hand_updated")
-	emit_signal("play_updated")
-	emit_signal("discard_updated")
-	
-func init_core_cards() -> void:
-	for _i in default_core_deck.core_cards.size():
-		var core_card_resource = default_core_deck.core_cards[_i]
-		var card = create_card_in_pile(core_card_resource, FrameworkSettings.PileType.DRAW)
-		var threat_card_resource = default_core_deck.threat_cards[_i]
-		card.set_threat_resource(threat_card_resource)
-		#var card = create_card(card_resource)
-		#draw_cards.push_back(card)
-	
-	draw_cards.shuffle()
-	
-func _ready() -> void:
-	size = Vector2.ZERO
-	spread_curve.add_point(Vector2(0, -1), 0, 0, Curve.TANGENT_LINEAR, Curve.TANGENT_LINEAR)
-	spread_curve.add_point(Vector2(1, 1), 0, 0, Curve.TANGENT_LINEAR, Curve.TANGENT_LINEAR)
-	reset_card_collection()
-	reset_target_positions()
-	
+#func _get_card_data_by_name(name_ : String) -> void:
+	#for json_data in card_database:
+		#if json_data.name == name_:
+			#return json_data
+	#return null
+#endregion
+
 #region target positions
 func reset_target_positions() -> void:
 	set_draw_target_positions()
@@ -325,45 +355,8 @@ func set_play_target_positions() -> void:
 func update_target_position() -> void:
 	pass
 #endregion
-	
-# called by Card
-func reset_card_z_index() -> void:
-	for _i in draw_cards.size():
-		var card = draw_cards[_i]
-		card.z_index = 10 + _i
-	for _i in play_cards.size():
-		var card = play_cards[_i]
-		card.z_index = 10 + _i
-	for _i in discard_cards.size():
-		var card = discard_cards[_i]
-		card.z_index = 10 + _i
-	reset_hand_z_index()
-	
-func reset_hand_z_index() -> void:
-	for _i in hand_cards.size():
-		var card = hand_cards[_i]
-		card.z_index = 100 + _i
-		card.move_to_front()
-		if card.mouse_is_hovering:
-			card.z_index = 200 + _i
-		if card.is_clicked:
-			card.z_index = 300 + _i
-	
-func is_card_in_hand(card) -> bool:
-	return hand_cards.filter(func (a): return a == card).size()
-	
-func is_any_card_clicked() -> bool:
-	for card in hand_cards:
-		if card.is_clicked:
-			return true
-	var all_dropzones:  = []
-	get_dropzones(get_tree().get_root(), "CardDropzone", all_dropzones)
-	for dropzone in all_dropzones:
-		for card in dropzone.get_held_cards():
-			if card.is_clicked:
-				return true
-	return false
-	
+
+#region draw
 #public function to try and draw a card 
 func draw(num_cards: int = 1) -> void:
 	for _i in num_cards:
@@ -402,36 +395,55 @@ func set_topdeck_to_threat_dropzone(dropzone_: ThreatCardDropzone) -> void:
 	maybe_remove_card_from_any_dropzones(topdeck)
 	reset_target_positions()
 	
+#endregion
+
+#region hand
 func hand_is_at_max_capacity() -> bool:
 	return hand_cards.size() >= max_hand_size
 	
 func sort_hand(sort_func) -> void:
 	hand_cards.sort_custom(sort_func)
 	reset_target_positions()
+
+# called by Card
+func reset_card_z_index() -> void:
+	for _i in draw_cards.size():
+		var card = draw_cards[_i]
+		card.z_index = 10 + _i
+	for _i in play_cards.size():
+		var card = play_cards[_i]
+		card.z_index = 10 + _i
+	for _i in discard_cards.size():
+		var card = discard_cards[_i]
+		card.z_index = 10 + _i
+	reset_hand_z_index()
 	
-func create_card(card_core_resource_: CardResource) -> Card:
-	var card = card_scene.instantiate()
-	card.frontface_texture = "res://entities/card/images/card_empty.png"
-	card.backface_texture = "res://entities/card/images/card_back.png"
-	card.return_speed = card_return_speed
-	card.hover_distance = card_hover_distance
-	card.drag_when_clicked = drag_when_clicked
+func reset_hand_z_index() -> void:
+	for _i in hand_cards.size():
+		var card = hand_cards[_i]
+		card.z_index = 100 + _i
+		card.move_to_front()
+		if card.mouse_is_hovering:
+			card.z_index = 200 + _i
+		if card.is_clicked:
+			card.z_index = 300 + _i
 	
-	card.core_resource = card_core_resource_
-	#card.resource = ResourceLoader.load(json_data.resource_script_path).new()
-	#for key in json_data.keys() -> void:
-		#if key != "texture_path" and key != "backface_texture_path" and key != "resource_script_path":
-			#card.card_data[key] = json_data[key]
-	card.connect("card_hovered", func(a) -> void: emit_signal("card_hovered", a))
-	card.connect("card_unhovered", func(a) -> void: emit_signal("card_unhovered", a))
-	card.connect("card_clicked", func(a) -> void: emit_signal("card_clicked", a))
-	card.connect("card_dropped", func(a) -> void: emit_signal("card_dropped", a))
-	card.board = bank.board
-	add_child(card)
-	return card
+func is_hand_enabled() -> bool:
+	return hand_enabled
 	
-#func _get_card_data_by_name(name_ : String) -> void:
-	#for json_data in card_database:
-		#if json_data.name == name_:
-			#return json_data
-	#return null
+func is_card_in_hand(card) -> bool:
+	return hand_cards.filter(func (a): return a == card).size()
+	
+func is_any_card_clicked() -> bool:
+	for card in hand_cards:
+		if card.is_clicked:
+			return true
+	var all_dropzones:  = []
+	get_dropzones(get_tree().get_root(), "CardDropzone", all_dropzones)
+	for dropzone in all_dropzones:
+		for card in dropzone.get_held_cards():
+			if card.is_clicked:
+				return true
+	return false
+
+#endregion

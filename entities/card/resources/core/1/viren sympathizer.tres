@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=5 format=3 uid="uid://bbo6xlcdbvcd5"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_054eh"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xb3y5"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="3_vscpq"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="4_x7c7f"]
+
+[resource]
+script = ExtResource("4_x7c7f")
+level = 1
+type = 2
+faction = 2
+cost = 3
+default_effects = Array[ExtResource("1_054eh")]([ExtResource("3_vscpq")])
+name = "viren sympathizer"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

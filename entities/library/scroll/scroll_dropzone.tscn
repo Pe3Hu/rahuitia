@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2pdum1iv6pga"]
+
+[ext_resource type="Script" uid="uid://3r872mtv6lgi" path="res://entities/library/scroll/scroll_dropzone.gd" id="1_81evi"]
+
+[node name="ScrollDropzone" type="PanelContainer"]
+visible = false
+custom_minimum_size = Vector2(210, 300)
+mouse_filter = 1
+script = ExtResource("1_81evi")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

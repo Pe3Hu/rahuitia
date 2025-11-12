@@ -13,6 +13,7 @@ extends MarginContainer
 
 @onready var bank: Bank = %Bank
 @onready var tide: Tide = %Tide
+@onready var library: Library = %Library
 @onready var custom_cursor: CustomCursor = %CustomCursor
 
 var current_hovered_card: Card
@@ -23,6 +24,8 @@ func _ready():
 	#await get_tree().create_timer(4.1)
 	card_pile.draw(FrameworkSettings.STARTING_CARD)
 	tide.refill_threat_dropzones()
+	library.init_scroll_core_cards()
+	#library.pedestal.refill_scroll_dropzones()
 	card_pile.connect("card_hovered", func(card):
 		#rich_text_label.text = card.card_data.format_description()
 		#panel_container.visible = true

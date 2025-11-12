@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://bbwr2oaiai8bx"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_5llql"]
+[ext_resource type="Resource" uid="uid://cerk3m5ijej7a" path="res://entities/token/effect/armor_2.tres" id="2_fhn0k"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_p0d2u"]
+[ext_resource type="Resource" uid="uid://dvlffb2h3v04g" path="res://entities/token/condition/conspire_1.tres" id="3_knfpx"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_r18fl"]
+[ext_resource type="Resource" uid="uid://5xlc8m4f2jv0" path="res://entities/token/effect/sacrifice_2.tres" id="4_fhn0k"]
+[ext_resource type="Resource" uid="uid://c78n8vlom7io1" path="res://entities/token/effect/ambush_1.tres" id="5_j3lo6"]
+
+[resource]
+script = ExtResource("3_r18fl")
+level = 2
+type = 2
+faction = 3
+cost = 2
+default_effects = Array[ExtResource("1_5llql")]([ExtResource("4_fhn0k"), ExtResource("5_j3lo6")])
+conditions = Array[ExtResource("2_p0d2u")]([ExtResource("3_knfpx")])
+condition_effects = Array[ExtResource("1_5llql")]([ExtResource("2_fhn0k")])
+name = "shadowy confidant"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

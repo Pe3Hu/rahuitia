@@ -32,6 +32,8 @@ var drag_when_clicked: bool = true
 
 var target_position: #Vector2 = Vector2.ZERO:
 	set(value_):
+		if get_parent() is ScrollCardDropzone: return
+		#if get_parent() is ThreatCardDropzone: return
 		target_position = value_
 var return_speed: float = 0.2
 var hover_distance: float = 10
@@ -101,7 +103,7 @@ func card_can_be_interacted_with() -> bool:
 			is_valid = dropzone.get_top_card() == self and not parent.is_any_card_clicked()
 	
 	return is_valid
-
+	
 func _process(_delta):
 	if is_clicked and drag_when_clicked:
 		target_position = get_global_mouse_position() - size * 0.5

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://bdaj7uslj01cb"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_evnmy"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_ndksu"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_3ck26"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="3_kyw55"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="4_b61ad"]
+
+[resource]
+script = ExtResource("3_3ck26")
+level = 2
+faction = 3
+cost = 2
+default_effects = Array[ExtResource("1_evnmy")]([ExtResource("3_kyw55"), ExtResource("4_b61ad")])
+name = "three meters under"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

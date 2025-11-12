@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DeckResource" load_steps=18 format=3 uid="uid://cyfthfhfb88kb"]
+
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="1_dtoqu"]
+[ext_resource type="Resource" uid="uid://b2ivmyjf7t52g" path="res://entities/card/resources/core/1/exceed your limits.tres" id="2_sovr6"]
+[ext_resource type="Resource" uid="uid://kl7ejoo3s3h0" path="res://entities/card/resources/core/1/live off the land.tres" id="3_7it7t"]
+[ext_resource type="Resource" uid="uid://cftkdlpxvglqb" path="res://entities/card/resources/core/1/loayl customer.tres" id="4_dtoqu"]
+[ext_resource type="Script" uid="uid://crulyl6kcnd1q" path="res://entities/deck/deck_resource.gd" id="4_nexs2"]
+[ext_resource type="Resource" uid="uid://by4f71xgbsu4i" path="res://entities/card/resources/core/1/silver courtier.tres" id="5_grxw1"]
+[ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="5_o55ul"]
+[ext_resource type="Resource" uid="uid://bbo6xlcdbvcd5" path="res://entities/card/resources/core/1/viren sympathizer.tres" id="6_o5kvl"]
+[ext_resource type="Resource" uid="uid://csgp3ynl7dp01" path="res://entities/card/resources/core/1/money a.tres" id="7_o5kvl"]
+[ext_resource type="Resource" uid="uid://uxbt5sqlcow" path="res://entities/card/resources/core/1/easy money.tres" id="8_nexs2"]
+[ext_resource type="Resource" uid="uid://ca8w6d0g81l00" path="res://entities/card/resources/core/1/local target.tres" id="9_o55ul"]
+[ext_resource type="Resource" uid="uid://c3peuhqpnqbrx" path="res://entities/card/resources/core/1/optical overlay.tres" id="10_b18wp"]
+[ext_resource type="Resource" uid="uid://cmsd8lv0agvgt" path="res://entities/card/resources/core/1/worker mutiny.tres" id="11_5dmkc"]
+[ext_resource type="Resource" uid="uid://b18cnhnqngwp4" path="res://entities/card/resources/core/1/two meters under.tres" id="12_viltj"]
+[ext_resource type="Resource" uid="uid://c0o4bvxdadfuc" path="res://entities/card/resources/core/1/data transfer.tres" id="13_5jbaa"]
+[ext_resource type="Resource" uid="uid://dp6gm4v60sqd8" path="res://entities/card/resources/core/1/hired guns.tres" id="14_mta8m"]
+[ext_resource type="Resource" uid="uid://bqi5wlbdus3rr" path="res://entities/card/resources/core/1/scrounge.tres" id="15_4q5hu"]
+
+[resource]
+script = ExtResource("4_nexs2")
+core_cards = Array[ExtResource("1_dtoqu")]([ExtResource("5_grxw1"), ExtResource("6_o5kvl"), ExtResource("3_7it7t"), ExtResource("2_sovr6"), ExtResource("4_dtoqu"), ExtResource("7_o5kvl"), ExtResource("8_nexs2"), ExtResource("9_o55ul"), ExtResource("10_b18wp"), ExtResource("11_5dmkc"), ExtResource("12_viltj"), ExtResource("13_5jbaa"), ExtResource("14_mta8m"), ExtResource("15_4q5hu")])
+metadata/_custom_type_script = "uid://crulyl6kcnd1q"

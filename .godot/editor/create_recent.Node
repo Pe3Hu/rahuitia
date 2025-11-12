@@ -1,6 +1,6 @@
-HBoxContainer
 VBoxContainer
+HBoxContainer
+PanelContainer
 GridContainer
 MarginContainer
-PanelContainer
 Sprite2D

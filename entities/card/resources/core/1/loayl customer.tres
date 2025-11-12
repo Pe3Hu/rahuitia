@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://cftkdlpxvglqb"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_jkftp"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="2_4q0f3"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_jx0l5"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_4q0f3"]
+[ext_resource type="Resource" uid="uid://b16a4fi5fwylx" path="res://entities/token/condition/modification_1.tres" id="4_mvem7"]
+
+[resource]
+script = ExtResource("3_4q0f3")
+level = 1
+type = 2
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_jkftp")]([ExtResource("2_4q0f3")])
+conditions = Array[ExtResource("2_jx0l5")]([ExtResource("4_mvem7")])
+condition_effects = Array[ExtResource("1_jkftp")]([ExtResource("2_4q0f3")])
+name = "loayl customer"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -2,6 +2,7 @@ class_name CardThreatResource
 extends CardResource
 
 
+#region var
 @export var planet: FrameworkSettings.PlanetType = FrameworkSettings.PlanetType.DEFAULT
 @export var type: FrameworkSettings.ThreatType
 @export var offensive: EffectResource
@@ -10,21 +11,17 @@ extends CardResource
 @export var keyword: KeywordResource
 @export var aftermath: EffectResource
 
-
-var wound_int: int = 0:
-	set(value_):
-		wound_int = value_
-		#update_death()
+var wound_int: int = 0
 var health_int: int = 0
 var damage_int: int = 0
+#endregion
 
 
 func preparation() -> void:
 	update_health()
 	update_damage()
 	pass
-
-
+	
 func update_health() -> void:
 	health_int = 0
 	

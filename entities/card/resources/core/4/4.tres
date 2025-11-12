@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=4 format=3 uid="uid://c14ykpbj842kk"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_le1pw"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xtf6g"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ccak3"]
+
+[resource]
+script = ExtResource("3_ccak3")
+level = 4
+cost = 1
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

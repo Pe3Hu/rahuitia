@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=5 format=3 uid="uid://csgp3ynl7dp01"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_2tnbx"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_l162y"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_k1xys"]
+[ext_resource type="Resource" uid="uid://00xpho701f5b" path="res://entities/token/effect/credit_3.tres" id="3_l162y"]
+
+[resource]
+script = ExtResource("3_k1xys")
+level = 1
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_2tnbx")]([ExtResource("3_l162y")])
+name = "money a"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

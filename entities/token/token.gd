@@ -9,6 +9,7 @@ signal token_clicked
 signal token_dropped
 #endregion
 
+#region var
 @export var bank: Bank
 
 @export var type: FrameworkSettings.TokenType = FrameworkSettings.TokenType.DEFAULT:
@@ -47,10 +48,13 @@ signal token_dropped
 		#%ConditionLabel.text = FrameworkSettings
 
 var is_selected: bool = false
+#endregion
 
+#region color
 var angle: float = 90
 var shader_color_start: Color
 var shader_color_end: Color
+#endregion
 
 
 func _ready():
@@ -110,29 +114,32 @@ func update_colors() -> void:
 	
 	match type:
 		FrameworkSettings.TokenType.ACTION:
-			h_start = 200.0
-			h_end = 220.0
-			angle = 0.0
-		FrameworkSettings.TokenType.ARMOR:
-			h_start = 200.0
-			h_end = 220.0
-			s_start = 0.4
-			s_end = 0.5
-			v_start = 0.4
-			v_end = 0.5
-			angle = 0.0
-		FrameworkSettings.TokenType.DEFENSIVE:
-			h_start = 200.0
-			h_end = 220.0
-			s_start = 0.4
-			s_end = 0.5
-			v_start = 0.4
-			v_end = 0.5
-			angle = 0.0
-		FrameworkSettings.TokenType.LEVEL:
 			h_start = 100.0
 			h_end = 120.0
 			angle = -60.0
+		FrameworkSettings.TokenType.ARMOR:
+			h_start = 200.0
+			h_end = 220.0
+			angle = 0.0
+			#h_start = 200.0
+			#h_end = 220.0
+			#s_start = 0.4
+			#s_end = 0.5
+			#v_start = 0.4
+			#v_end = 0.5
+			#angle = 0.0
+		FrameworkSettings.TokenType.DEFENSIVE:
+			h_start = 200.0
+			h_end = 220.0
+			angle = 0.0
+		FrameworkSettings.TokenType.LEVEL:
+			h_start = 200.0
+			h_end = 220.0
+			s_start = 0.4
+			s_end = 0.5
+			v_start = 0.4
+			v_end = 0.5
+			angle = 0.0
 		FrameworkSettings.TokenType.CREDIT:
 			h_start = 50.0
 			h_end = 70.0
@@ -160,11 +167,14 @@ func update_colors() -> void:
 				FrameworkSettings.DangerType.ARMOR:
 					h_start = 200.0
 					h_end = 220.0
-					s_start = 0.4
-					s_end = 0.5
-					v_start = 0.4
-					v_end = 0.5
 					angle = 0.0
+					#h_start = 200.0
+					#h_end = 220.0
+					#s_start = 0.4
+					#s_end = 0.5
+					#v_start = 0.4
+					#v_end = 0.5
+					#angle = 0.0
 					
 	
 	shader_color_start = Color.from_hsv(h_start / max_h, s_start, v_start)

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://dpiyb22km0isi"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_3dsh3"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="2_6k6r0"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_wpbv3"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ha8kb"]
+[ext_resource type="Resource" uid="uid://4octyqh4svqj" path="res://entities/token/effect/credit_2.tres" id="3_wpbv3"]
+[ext_resource type="Resource" uid="uid://beu4usl3jt4u3" path="res://entities/token/condition/arsenal_2.tres" id="4_m4adg"]
+
+[resource]
+script = ExtResource("3_ha8kb")
+level = 1
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_3dsh3")]([ExtResource("3_wpbv3")])
+conditions = Array[ExtResource("2_wpbv3")]([ExtResource("4_m4adg")])
+condition_effects = Array[ExtResource("1_3dsh3")]([ExtResource("2_6k6r0")])
+name = "dangerous dealings"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

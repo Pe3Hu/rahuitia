@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://bqjy5pab58jdw"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_5te6b"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xllf6"]
+[ext_resource type="Resource" uid="uid://cweipty82rolx" path="res://entities/token/effect/heal_2.tres" id="2_xsgnk"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_nvq7n"]
+[ext_resource type="Resource" uid="uid://dvlffb2h3v04g" path="res://entities/token/condition/conspire_1.tres" id="4_ywgmg"]
+[ext_resource type="Resource" uid="uid://cugi6dl4eowl7" path="res://entities/token/effect/armor_6.tres" id="5_sudnk"]
+
+[resource]
+script = ExtResource("3_nvq7n")
+level = 3
+type = 2
+faction = 3
+cost = 4
+default_effects = Array[ExtResource("1_5te6b")]([ExtResource("5_sudnk")])
+conditions = Array[ExtResource("2_xllf6")]([ExtResource("4_ywgmg")])
+condition_effects = Array[ExtResource("1_5te6b")]([ExtResource("2_xsgnk")])
+name = "royal armorer"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

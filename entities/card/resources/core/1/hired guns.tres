@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://dp6gm4v60sqd8"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_hiv5m"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_fweoy"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="2_oje4r"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_oje4r"]
+[ext_resource type="Resource" uid="uid://dnp00fmxryui0" path="res://entities/token/condition/bargain_4.tres" id="4_3rsdr"]
+
+[resource]
+script = ExtResource("3_oje4r")
+level = 1
+faction = 4
+cost = 1
+conditions = Array[ExtResource("2_fweoy")]([ExtResource("4_3rsdr"), ExtResource("4_3rsdr")])
+condition_effects = Array[ExtResource("1_hiv5m")]([ExtResource("2_oje4r"), ExtResource("2_oje4r")])
+name = "hired guns"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0t7xys8y7gml"]
+
+[ext_resource type="Script" uid="uid://dj37ofxmp2vkp" path="res://entities/library/pedestal/pedestal.gd" id="1_5uebe"]
+[ext_resource type="PackedScene" uid="uid://b2pdum1iv6pga" path="res://entities/library/scroll/scroll_dropzone.tscn" id="1_60wpw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60wpw"]
+
+[node name="Pedestal" type="PanelContainer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -150.0
+offset_right = 335.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_60wpw")
+script = ExtResource("1_5uebe")
+
+[node name="Scrolls" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ScrollDropzone1" parent="Scrolls" instance=ExtResource("1_60wpw")]
+unique_name_in_owner = true
+visible = true
+layout_mode = 2
+level_int = 0
+
+[node name="ScrollDropzone2" parent="Scrolls" instance=ExtResource("1_60wpw")]
+unique_name_in_owner = true
+visible = true
+layout_mode = 2
+level_int = 0
+
+[node name="ScrollDropzone3" parent="Scrolls" instance=ExtResource("1_60wpw")]
+unique_name_in_owner = true
+visible = true
+layout_mode = 2
+level_int = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

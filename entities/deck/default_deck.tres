@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DeckResource" load_steps=11 format=3 uid="uid://b7ka3wtrjky5t"]
 
 [ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="2_b7diu"]
-[ext_resource type="Resource" uid="uid://ohdwkhweq31j" path="res://entities/card/resources/core/strike.tres" id="3_b7diu"]
+[ext_resource type="Resource" uid="uid://ohdwkhweq31j" path="res://entities/card/resources/core/0/strike.tres" id="3_b7diu"]
 [ext_resource type="Script" uid="uid://crulyl6kcnd1q" path="res://entities/deck/deck_resource.gd" id="3_t8qp3"]
-[ext_resource type="Resource" uid="uid://dayjusrc67u77" path="res://entities/card/resources/core/spare credits.tres" id="4_t8qp3"]
+[ext_resource type="Resource" uid="uid://dayjusrc67u77" path="res://entities/card/resources/core/0/spare credits.tres" id="4_t8qp3"]
 [ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="5_yeydb"]
 [ext_resource type="Resource" uid="uid://bg0qgwdclag0m" path="res://entities/card/resources/threat/ceresan thief.tres" id="6_t32vy"]
 [ext_resource type="Resource" uid="uid://bak518jqlqd2p" path="res://entities/card/resources/threat/virenian dear.tres" id="7_xpaw3"]

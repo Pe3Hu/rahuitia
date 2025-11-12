@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://catt7ntd3r5pd"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_5eqn5"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_18n1d"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="3_588v6"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_vppif"]
+[ext_resource type="Resource" uid="uid://c6bxflhwjngww" path="res://entities/token/effect/action_2.tres" id="4_yg8ss"]
+[ext_resource type="Resource" uid="uid://cerk3m5ijej7a" path="res://entities/token/effect/armor_2.tres" id="5_f7yut"]
+
+[resource]
+script = ExtResource("3_vppif")
+level = 2
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_5eqn5")]([ExtResource("3_588v6"), ExtResource("4_yg8ss"), ExtResource("5_f7yut")])
+name = "viren tribalism"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

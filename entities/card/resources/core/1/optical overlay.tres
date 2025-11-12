@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://c3peuhqpnqbrx"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_ntfiq"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_n8fue"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_qxo2f"]
+[ext_resource type="Resource" uid="uid://h3gmnlcwkfn6" path="res://entities/token/condition/unite_x.tres" id="3_s5i16"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="4_hqvlw"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="5_mvqsa"]
+
+[resource]
+script = ExtResource("3_qxo2f")
+level = 1
+faction = 1
+cost = 2
+default_effects = Array[ExtResource("1_ntfiq")]([ExtResource("4_hqvlw"), ExtResource("5_mvqsa")])
+conditions = Array[ExtResource("2_n8fue")]([ExtResource("3_s5i16")])
+condition_effects = Array[ExtResource("1_ntfiq")]([null])
+name = "optical overlay"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

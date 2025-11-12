@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://cw1mdhlmtpug"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_hewii"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="2_dn3wk"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_g08pl"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_6lvjj"]
+[ext_resource type="Resource" uid="uid://dvlffb2h3v04g" path="res://entities/token/condition/conspire_1.tres" id="4_658sx"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="5_d3dya"]
+
+[resource]
+script = ExtResource("3_6lvjj")
+level = 3
+faction = 3
+cost = 1
+default_effects = Array[ExtResource("1_hewii")]([ExtResource("5_d3dya")])
+conditions = Array[ExtResource("2_g08pl")]([ExtResource("4_658sx")])
+condition_effects = Array[ExtResource("1_hewii")]([ExtResource("2_dn3wk")])
+name = "a blade in the dark"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

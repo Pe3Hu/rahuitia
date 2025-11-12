@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EffectResource" load_steps=2 format=3 uid="uid://b6x0024r0cwy8"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_ledd4"]
+
+[resource]
+script = ExtResource("1_ledd4")
+type = 6
+value_int = 1
+metadata/_custom_type_script = "uid://bteu5efegjnpk"

@@ -1,23 +1,31 @@
-res://entities/token/token.tscn
+res://entities/library/library.tscn
 res://entities/token/token gradient.gdshader
-res://entities/token/token.gd
-res://entities/card/shell/shell_card.gd
-res://entities/card/shell/shell_card.tscn
-res://entities/card/resources/threat/card_threat_resource.gd
-res://entities/dropzone/threat/threat_dropzone.gd
-res://entities/dropzone/threat/threat_dropzone.tscn
-res://entities/card/card.gd
+res://entities/token/effect/refresh_1.tres
+res://entities/token/effect/refresh_focus.tres
+res://entities/token/effect/sacrifice_1.tres
+res://entities/token/effect/sacrifice_2.tres
+res://entities/token/effect/sacrifice_any.tres
 res://global/framework_settings.gd
-res://entities/card/resources/threat/virenian dear.tres
-res://entities/board/board.tscn
-res://entities/board/board.gd
-res://entities/bank/bank.gd
-res://entities/tide/tide.tscn
-res://entities/pile/threat/threat_dropzone.tscn
-res://entities/tide/tide.gd
-res://entities/pile/simple_card_pile.gd
-res://entities/tide/threat/threat_dropzone.gd
-res://entities/tide/threat/threat_dropzone.tscn
-res://entities/card/resources/core/strike.tres
-res://entities/card/resources/core/spare credits.tres
-res://entities/pile/card_pile.gd
+res://entities/token/condition/sacrifice_any.tres
+res://entities/card/resources/core/2/pact of kin.tres
+res://entities/token/effect/damage_sacrifice.tres
+res://entities/deck/scroll_2_deck.tres
+res://entities/card/resources/core/3/3.tres
+res://entities/card/resources/core/2/three meters under.tres
+res://entities/card/resources/core/3/gadwick loss prevention.tres
+res://entities/token/condition/modification_any.tres
+res://entities/token/effect/damage_modification.tres
+res://entities/card/resources/core/3/admiral's favor.tres
+res://entities/card/resources/core/3/unleash your streangth.tres
+res://entities/token/effect/kill_any.tres
+res://entities/card/resources/core/3/national target.tres
+res://entities/token/effect/damage_unite.tres
+res://entities/card/resources/core/3/viren strategy.tres
+res://entities/card/resources/core/3/royal armorer.tres
+res://entities/token/effect/armor_6.tres
+res://entities/token/effect/heal_2.tres
+res://entities/card/resources/core/3/retrun a favor.tres
+res://entities/card/resources/core/3/doctor repura.tres
+res://entities/card/resources/core/3/a blade in the dark.tres
+res://entities/card/resources/core/4/4.tres
+res://entities/deck/scroll_3_deck.tres

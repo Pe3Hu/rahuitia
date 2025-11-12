@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_syldi")
-type = "unite"
+type = 3
 value_int = 3
 metadata/_custom_type_script = "uid://72gegbx4ks4"
