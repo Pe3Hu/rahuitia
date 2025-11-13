@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://7jloijvyfwxs"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_3hng7"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_r528k"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_2yqsd"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="3_5mhal"]
+[ext_resource type="Resource" uid="uid://cj246couuyvdk" path="res://entities/token/effect/hybrid_x.tres" id="4_ynytv"]
+
+[resource]
+script = ExtResource("3_2yqsd")
+level = 4
+type = 2
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_3hng7")]([ExtResource("3_5mhal"), ExtResource("4_ynytv")])
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

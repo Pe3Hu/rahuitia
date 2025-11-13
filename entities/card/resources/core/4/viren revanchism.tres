@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://c11yhk36aylda"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_4tbf7"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_3gk3g"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ekm66"]
+[ext_resource type="Resource" uid="uid://4octyqh4svqj" path="res://entities/token/effect/credit_2.tres" id="3_tk35w"]
+[ext_resource type="Resource" uid="uid://7idqhnav8nny" path="res://entities/token/effect/action_3.tres" id="4_7oj5w"]
+
+[resource]
+script = ExtResource("3_ekm66")
+level = 4
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_4tbf7")]([ExtResource("3_tk35w"), ExtResource("4_7oj5w")])
+name = "viren revanchism"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

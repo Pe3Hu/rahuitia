@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://dbti7rxyia2n7"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_e148m"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_mqfor"]
+[ext_resource type="Resource" uid="uid://dcw0xh4f7i4ki" path="res://entities/token/effect/swap_1.tres" id="2_yya8r"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_qhncu"]
+[ext_resource type="Resource" uid="uid://c0tggytg67aw2" path="res://entities/token/condition/sacrifice_1.tres" id="4_s7rxw"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="5_lk5da"]
+
+[resource]
+script = ExtResource("3_qhncu")
+level = 4
+type = 2
+faction = 3
+cost = 1
+default_effects = Array[ExtResource("1_e148m")]([ExtResource("5_lk5da")])
+conditions = Array[ExtResource("2_mqfor")]([ExtResource("4_s7rxw")])
+condition_effects = Array[ExtResource("1_e148m")]([ExtResource("2_yya8r")])
+name = "sol the housecleaner"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

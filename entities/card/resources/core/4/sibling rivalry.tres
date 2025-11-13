@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://61tciqack8rn"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_rc4le"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_praep"]
+[ext_resource type="Resource" uid="uid://3pd8g2r3t7s1" path="res://entities/token/effect/sacrifice_1.tres" id="3_6bqyd"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_cf3ql"]
+[ext_resource type="Resource" uid="uid://dw72uxh44janp" path="res://entities/token/effect/heal_3.tres" id="3_pk88b"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="4_pk88b"]
+[ext_resource type="Resource" uid="uid://cfe85suxj8haa" path="res://entities/token/condition/focus_3.tres" id="5_3nw77"]
+
+[resource]
+script = ExtResource("3_cf3ql")
+level = 4
+faction = 3
+default_effects = Array[ExtResource("1_rc4le")]([ExtResource("3_6bqyd"), ExtResource("4_pk88b")])
+conditions = Array[ExtResource("2_praep")]([ExtResource("5_3nw77"), ExtResource("5_3nw77")])
+condition_effects = Array[ExtResource("1_rc4le")]([ExtResource("4_pk88b"), ExtResource("3_pk88b")])
+name = "sibling rivalry"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

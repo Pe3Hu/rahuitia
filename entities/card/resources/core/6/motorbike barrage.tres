@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://byk0gk1r2dw0n"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_aqwcl"]
+[ext_resource type="Resource" uid="uid://b2k8xum4qm41c" path="res://entities/token/effect/damage_4.tres" id="2_3fufb"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_busq0"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_sphx3"]
+[ext_resource type="Resource" uid="uid://dnp00fmxryui0" path="res://entities/token/condition/bargain_4.tres" id="4_ijvfw"]
+[ext_resource type="Resource" uid="uid://d1j7sn3fxx5pm" path="res://entities/token/effect/action_1.tres" id="5_g5tjt"]
+
+[resource]
+script = ExtResource("3_sphx3")
+level = 6
+faction = 4
+default_effects = Array[ExtResource("1_aqwcl")]([ExtResource("2_3fufb"), ExtResource("5_g5tjt")])
+conditions = Array[ExtResource("2_busq0")]([ExtResource("4_ijvfw")])
+condition_effects = Array[ExtResource("1_aqwcl")]([ExtResource("2_3fufb")])
+name = "motorbike barrage"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

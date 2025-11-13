@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=9 format=3 uid="uid://idtuysuknyss"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_p8s8c"]
+[ext_resource type="Resource" uid="uid://cweipty82rolx" path="res://entities/token/effect/heal_2.tres" id="2_braxm"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_kwkmr"]
+[ext_resource type="Resource" uid="uid://4octyqh4svqj" path="res://entities/token/effect/credit_2.tres" id="3_a51b7"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_tds5k"]
+[ext_resource type="Resource" uid="uid://giqjnph05jul" path="res://entities/token/condition/choose_a.tres" id="5_xqw8b"]
+[ext_resource type="Resource" uid="uid://ck5ri7bat5ko2" path="res://entities/token/condition/choose_b.tres" id="6_inb1h"]
+[ext_resource type="Resource" uid="uid://b483f5xsw4nve" path="res://entities/token/condition/choose_c.tres" id="7_pg6a1"]
+
+[resource]
+script = ExtResource("3_tds5k")
+level = 1
+faction = 3
+cost = 1
+conditions = Array[ExtResource("2_kwkmr")]([ExtResource("5_xqw8b"), ExtResource("6_inb1h"), ExtResource("7_pg6a1"), ExtResource("7_pg6a1")])
+condition_effects = Array[ExtResource("1_p8s8c")]([ExtResource("2_braxm"), ExtResource("3_a51b7"), ExtResource("2_braxm"), ExtResource("3_a51b7")])
+name = "blood donation"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

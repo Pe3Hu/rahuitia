@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://byecrih46x3y5"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_a837x"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_iq00a"]
+[ext_resource type="Resource" uid="uid://c6e32yg3e8n2q" path="res://entities/token/effect/heal_4.tres" id="3_4vy32"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_7xrxc"]
+[ext_resource type="Resource" uid="uid://qrvx5w3yh87o" path="res://entities/token/effect/spy_x.tres" id="4_mrkaw"]
+
+[resource]
+script = ExtResource("3_7xrxc")
+level = 4
+faction = 1
+default_effects = Array[ExtResource("1_a837x")]([ExtResource("3_4vy32"), ExtResource("4_mrkaw")])
+name = "lay low"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://cs6ob4r3gxk3j"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_q5pj4"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_53px2"]
+[ext_resource type="Resource" uid="uid://bb8g2ddplu6a8" path="res://entities/token/effect/trash_1.tres" id="2_klk6j"]
+[ext_resource type="Resource" uid="uid://d2dfxmpcvqf0s" path="res://entities/token/effect/search_i.tres" id="3_2dtkd"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_dsb3i"]
+[ext_resource type="Resource" uid="uid://b16a4fi5fwylx" path="res://entities/token/condition/modification_1.tres" id="5_8wmbn"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="6_wkdhe"]
+
+[resource]
+script = ExtResource("3_dsb3i")
+level = 4
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_q5pj4")]([ExtResource("6_wkdhe")])
+conditions = Array[ExtResource("2_53px2")]([ExtResource("5_8wmbn"), ExtResource("5_8wmbn")])
+condition_effects = Array[ExtResource("1_q5pj4")]([ExtResource("2_klk6j"), ExtResource("3_2dtkd")])
+name = "demolitions expert"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=5 format=3 uid="uid://bjq4a5g0ergrq"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_mhfal"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_kbol1"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_5w8e0"]
+[ext_resource type="Resource" uid="uid://toeh2uanp3uj" path="res://entities/token/condition/forge_x.tres" id="3_kbol1"]
+
+[resource]
+script = ExtResource("3_5w8e0")
+level = 4
+type = 2
+faction = 4
+cost = 2
+conditions = Array[ExtResource("2_kbol1")]([ExtResource("3_kbol1")])
+condition_effects = Array[ExtResource("1_mhfal")]([null])
+name = "gadgeteer"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

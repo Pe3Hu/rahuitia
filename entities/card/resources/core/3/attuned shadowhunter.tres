@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=5 format=3 uid="uid://clp1ggf06x7mv"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_51ih5"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xrqpm"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_gd6ek"]
+[ext_resource type="Resource" uid="uid://b6oe1oq3hn7dw" path="res://entities/token/effect/avoid_1.tres" id="3_xrqpm"]
+
+[resource]
+script = ExtResource("3_gd6ek")
+level = 3
+type = 2
+faction = 3
+cost = 1
+default_effects = Array[ExtResource("1_51ih5")]([ExtResource("3_xrqpm")])
+name = "attuned shadowhunter"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

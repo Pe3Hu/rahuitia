@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://cp71a8ner58a2"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_ct85t"]
+[ext_resource type="Resource" uid="uid://b0nil8qmcobsp" path="res://entities/token/effect/kill_unite.tres" id="2_lu37v"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xnqqp"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_lu37v"]
+[ext_resource type="Resource" uid="uid://h3gmnlcwkfn6" path="res://entities/token/condition/unite_x.tres" id="4_5p12y"]
+
+[resource]
+script = ExtResource("3_lu37v")
+level = 4
+faction = 1
+cost = 5
+conditions = Array[ExtResource("2_xnqqp")]([ExtResource("4_5p12y")])
+condition_effects = Array[ExtResource("1_ct85t")]([ExtResource("2_lu37v")])
+name = "call for aid"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

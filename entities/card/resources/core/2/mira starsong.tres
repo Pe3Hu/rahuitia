@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://c4mlc5h16ctd2"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_75eef"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_0d3ys"]
+[ext_resource type="Resource" uid="uid://d1j7sn3fxx5pm" path="res://entities/token/effect/action_1.tres" id="2_5hpo2"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_6mytb"]
+[ext_resource type="Resource" uid="uid://dalhfow7lnoiv" path="res://entities/token/condition/backstab_1.tres" id="4_igokt"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="5_uhwu2"]
+
+[resource]
+script = ExtResource("3_6mytb")
+level = 2
+type = 2
+faction = 2
+cost = 2
+default_effects = Array[ExtResource("1_75eef")]([ExtResource("5_uhwu2")])
+conditions = Array[ExtResource("2_0d3ys")]([ExtResource("4_igokt")])
+condition_effects = Array[ExtResource("1_75eef")]([ExtResource("2_5hpo2")])
+name = "mira starsong"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

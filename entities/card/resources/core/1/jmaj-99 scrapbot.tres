@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://ve4p6awl5rji"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_mp786"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_e8uad"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="2_nb0e2"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_0sp5n"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="3_lvteh"]
+[ext_resource type="Resource" uid="uid://giqjnph05jul" path="res://entities/token/condition/choose_a.tres" id="5_boaxb"]
+[ext_resource type="Resource" uid="uid://ck5ri7bat5ko2" path="res://entities/token/condition/choose_b.tres" id="6_4813t"]
+
+[resource]
+script = ExtResource("3_0sp5n")
+level = 1
+type = 2
+faction = 4
+cost = 2
+conditions = Array[ExtResource("2_e8uad")]([ExtResource("5_boaxb"), ExtResource("6_4813t")])
+condition_effects = Array[ExtResource("1_mp786")]([ExtResource("2_nb0e2"), ExtResource("3_lvteh")])
+name = "jmaj-99 scrapbot"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://dn5y0iqr4g4nv"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_1mrrw"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_42r3g"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_4qkty"]
+[ext_resource type="Resource" uid="uid://cweipty82rolx" path="res://entities/token/effect/heal_2.tres" id="3_jplea"]
+[ext_resource type="Resource" uid="uid://c2nhqnjshbqap" path="res://entities/token/effect/kill_any.tres" id="4_jsye6"]
+
+[resource]
+script = ExtResource("3_4qkty")
+level = 6
+faction = 1
+default_effects = Array[ExtResource("1_1mrrw")]([ExtResource("3_jplea"), ExtResource("4_jsye6")])
+name = "medical nanites"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

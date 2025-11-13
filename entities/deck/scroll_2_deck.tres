@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DeckResource" load_steps=19 format=3 uid="uid://dsjmg6uu3hno6"]
+[gd_resource type="Resource" script_class="DeckResource" load_steps=22 format=3 uid="uid://dsjmg6uu3hno6"]
 
 [ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="1_ircqp"]
 [ext_resource type="Resource" uid="uid://lfd1g77s7ahv" path="res://entities/card/resources/core/2/advanced optics.tres" id="2_jiwt3"]
@@ -17,9 +17,12 @@
 [ext_resource type="Resource" uid="uid://nd66iv8ir8rl" path="res://entities/card/resources/core/2/viren tactics.tres" id="15_gooa6"]
 [ext_resource type="Script" uid="uid://crulyl6kcnd1q" path="res://entities/deck/deck_resource.gd" id="16_euvnj"]
 [ext_resource type="Resource" uid="uid://catt7ntd3r5pd" path="res://entities/card/resources/core/2/viren tribalism.tres" id="16_pvvow"]
+[ext_resource type="Resource" uid="uid://bcsx688ffaapq" path="res://entities/card/resources/core/2/harness your will.tres" id="17_irm22"]
 [ext_resource type="Script" uid="uid://buyqkpdqvrqke" path="res://entities/card/resources/threat/card_threat_resource.gd" id="17_pvvow"]
+[ext_resource type="Resource" uid="uid://c4mlc5h16ctd2" path="res://entities/card/resources/core/2/mira starsong.tres" id="18_s8ylx"]
+[ext_resource type="Resource" uid="uid://c1kifmja5om2x" path="res://entities/card/resources/core/2/practice grounds.tres" id="19_mppkp"]
 
 [resource]
 script = ExtResource("16_euvnj")
-core_cards = Array[ExtResource("1_ircqp")]([ExtResource("2_jiwt3"), ExtResource("3_js1i1"), ExtResource("4_ho3w3"), ExtResource("5_irm22"), ExtResource("6_s8ylx"), ExtResource("7_mppkp"), ExtResource("8_33fot"), ExtResource("9_4ygfo"), ExtResource("10_rsoal"), ExtResource("11_cxulb"), ExtResource("12_lhgxl"), ExtResource("13_daiep"), ExtResource("14_mvy1j"), ExtResource("15_gooa6"), ExtResource("16_pvvow")])
+core_cards = Array[ExtResource("1_ircqp")]([ExtResource("2_jiwt3"), ExtResource("3_js1i1"), ExtResource("4_ho3w3"), ExtResource("5_irm22"), ExtResource("6_s8ylx"), ExtResource("7_mppkp"), ExtResource("8_33fot"), ExtResource("9_4ygfo"), ExtResource("10_rsoal"), ExtResource("11_cxulb"), ExtResource("12_lhgxl"), ExtResource("13_daiep"), ExtResource("14_mvy1j"), ExtResource("15_gooa6"), ExtResource("16_pvvow"), ExtResource("17_irm22"), ExtResource("18_s8ylx"), ExtResource("19_mppkp")])
 metadata/_custom_type_script = "uid://crulyl6kcnd1q"

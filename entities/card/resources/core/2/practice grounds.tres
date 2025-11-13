@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://c1kifmja5om2x"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_42uvc"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_k4iav"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_77imo"]
+[ext_resource type="Resource" uid="uid://cv0f1i586yvij" path="res://entities/token/effect/damage_2.tres" id="3_ycg0c"]
+[ext_resource type="Resource" uid="uid://cxcyne5wvs7ni" path="res://entities/token/effect/revive_1.tres" id="4_4hpdk"]
+
+[resource]
+script = ExtResource("3_77imo")
+level = 2
+faction = 3
+cost = 2
+default_effects = Array[ExtResource("1_42uvc")]([ExtResource("3_ycg0c"), ExtResource("4_4hpdk")])
+name = "practice grounds"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

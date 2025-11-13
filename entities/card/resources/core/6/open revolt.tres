@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://crjeoev56vwds"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_hxsty"]
+[ext_resource type="Resource" uid="uid://b1enf323tm7r7" path="res://entities/token/effect/damage_focus.tres" id="2_nqtup"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_oa21v"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_eqhjr"]
+[ext_resource type="Resource" uid="uid://2yuj8qkqxup3" path="res://entities/token/effect/aoe_focus.tres" id="3_ls1am"]
+[ext_resource type="Resource" uid="uid://dpd7mva4vc8fd" path="res://entities/token/condition/focus_x.tres" id="5_wn2pm"]
+
+[resource]
+script = ExtResource("3_eqhjr")
+level = 6
+faction = 2
+cost = 4
+conditions = Array[ExtResource("2_oa21v")]([ExtResource("5_wn2pm"), ExtResource("5_wn2pm")])
+condition_effects = Array[ExtResource("1_hxsty")]([ExtResource("2_nqtup"), ExtResource("3_ls1am")])
+name = "open revolt"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

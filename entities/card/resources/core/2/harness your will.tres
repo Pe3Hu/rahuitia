@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://bcsx688ffaapq"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_8mw05"]
+[ext_resource type="Resource" uid="uid://d1j7sn3fxx5pm" path="res://entities/token/effect/action_1.tres" id="2_gxfix"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xbqdv"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_k3i4q"]
+[ext_resource type="Resource" uid="uid://d4m143sksjox0" path="res://entities/token/condition/trophy_2.tres" id="4_0o6rm"]
+[ext_resource type="Resource" uid="uid://00kgna8bv4jk" path="res://entities/token/effect/damage_1.tres" id="5_blhrf"]
+[ext_resource type="Resource" uid="uid://dtd7ir4oh26cy" path="res://entities/token/effect/armor_3.tres" id="6_gob2v"]
+
+[resource]
+script = ExtResource("3_k3i4q")
+level = 2
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_8mw05")]([ExtResource("5_blhrf"), ExtResource("6_gob2v")])
+conditions = Array[ExtResource("2_xbqdv")]([ExtResource("4_0o6rm")])
+condition_effects = Array[ExtResource("1_8mw05")]([ExtResource("2_gxfix")])
+name = "harness your will"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://lpptvu81oi2t"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_bi7al"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_8etid"]
+[ext_resource type="Resource" uid="uid://b1enf323tm7r7" path="res://entities/token/effect/damage_focus.tres" id="2_hh28n"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_hh28n"]
+[ext_resource type="Resource" uid="uid://dpd7mva4vc8fd" path="res://entities/token/condition/focus_x.tres" id="4_80qq3"]
+
+[resource]
+script = ExtResource("3_hh28n")
+level = 6
+type = 2
+faction = 2
+conditions = Array[ExtResource("2_8etid")]([ExtResource("4_80qq3")])
+condition_effects = Array[ExtResource("1_bi7al")]([ExtResource("2_hh28n")])
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://bk72vuwd7jwxb"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_nrm88"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_46pi7"]
+[ext_resource type="Resource" uid="uid://c6bxflhwjngww" path="res://entities/token/effect/action_2.tres" id="3_184g7"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ktx1a"]
+[ext_resource type="Resource" uid="uid://c78n8vlom7io1" path="res://entities/token/effect/ambush_1.tres" id="4_y2qir"]
+
+[resource]
+script = ExtResource("3_ktx1a")
+level = 5
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_nrm88")]([ExtResource("3_184g7"), ExtResource("4_y2qir")])
+name = "ambush"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

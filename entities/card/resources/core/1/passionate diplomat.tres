@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://bdfo2rko343je"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_5e3pu"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="2_8rkc7"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_invri"]
+[ext_resource type="Resource" uid="uid://htx4phi6ynko" path="res://entities/token/effect/credit_1.tres" id="3_cdpus"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_pymdq"]
+[ext_resource type="Resource" uid="uid://dbnfthg4cg8qo" path="res://entities/token/condition/drop_1.tres" id="5_gsdw1"]
+[ext_resource type="Resource" uid="uid://386q4f11xgfn" path="res://entities/token/condition/unite_4.tres" id="6_xlcc1"]
+
+[resource]
+script = ExtResource("3_pymdq")
+level = 1
+cost = 2
+conditions = Array[ExtResource("2_invri")]([ExtResource("5_gsdw1"), ExtResource("6_xlcc1")])
+condition_effects = Array[ExtResource("1_5e3pu")]([ExtResource("2_8rkc7"), ExtResource("3_cdpus")])
+name = "passionate diplomat"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

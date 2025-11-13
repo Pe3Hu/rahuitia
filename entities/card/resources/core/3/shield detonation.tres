@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://bsfuac8p8gaxv"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_7kmxa"]
+[ext_resource type="Resource" uid="uid://c6bxflhwjngww" path="res://entities/token/effect/action_2.tres" id="2_5s0tj"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_lk1sm"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ym7fw"]
+[ext_resource type="Resource" uid="uid://b1helitys4kbx" path="res://entities/token/condition/backstab_any.tres" id="4_wnjmg"]
+[ext_resource type="Resource" uid="uid://bahmbdb052msx" path="res://entities/token/effect/damage_armor.tres" id="5_0bh75"]
+
+[resource]
+script = ExtResource("3_ym7fw")
+level = 3
+faction = 2
+cost = 1
+default_effects = Array[ExtResource("1_7kmxa")]([ExtResource("5_0bh75")])
+conditions = Array[ExtResource("2_lk1sm")]([ExtResource("4_wnjmg")])
+condition_effects = Array[ExtResource("1_7kmxa")]([ExtResource("2_5s0tj")])
+name = "shield detonation"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=7 format=3 uid="uid://djkle6akrb06r"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_1jklo"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_8l56f"]
+[ext_resource type="Resource" uid="uid://bsdiswmcb0hd2" path="res://entities/token/effect/kill_modification.tres" id="2_sre8p"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_ysbc2"]
+[ext_resource type="Resource" uid="uid://dvehrtw8cs88q" path="res://entities/token/condition/modification_any.tres" id="4_h6tkb"]
+[ext_resource type="Resource" uid="uid://csxkkwus7t4e4" path="res://entities/token/effect/credit_4.tres" id="5_kx5g5"]
+
+[resource]
+script = ExtResource("3_ysbc2")
+level = 6
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_1jklo")]([ExtResource("5_kx5g5")])
+conditions = Array[ExtResource("2_8l56f")]([ExtResource("4_h6tkb")])
+condition_effects = Array[ExtResource("1_1jklo")]([ExtResource("2_sre8p")])
+name = "paydirt"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

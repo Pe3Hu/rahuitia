@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConditionResource" load_steps=2 format=3 uid="uid://dbnfthg4cg8qo"]
+
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="1_84g7k"]
+
+[resource]
+script = ExtResource("1_84g7k")
+type = 12
+value_int = 1
+metadata/_custom_type_script = "uid://72gegbx4ks4"

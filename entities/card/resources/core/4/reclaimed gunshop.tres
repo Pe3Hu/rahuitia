@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=9 format=3 uid="uid://de7n0o0hfbhmf"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_ifbsc"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_ciu65"]
+[ext_resource type="Resource" uid="uid://djioungf7o601" path="res://entities/token/effect/credit_focus.tres" id="2_ijwlf"]
+[ext_resource type="Resource" uid="uid://dswjfyqj11pgd" path="res://entities/token/effect/armor_focus.tres" id="3_0eo1d"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_u1h4j"]
+[ext_resource type="Resource" uid="uid://dpd7mva4vc8fd" path="res://entities/token/condition/focus_x.tres" id="5_ime28"]
+[ext_resource type="Resource" uid="uid://b2k8xum4qm41c" path="res://entities/token/effect/damage_4.tres" id="6_jro52"]
+[ext_resource type="Resource" uid="uid://bhie7p83xdn8n" path="res://entities/token/effect/damage_3.tres" id="7_cuo4o"]
+
+[resource]
+script = ExtResource("3_u1h4j")
+level = 4
+faction = 2
+cost = 3
+default_effects = Array[ExtResource("1_ifbsc")]([ExtResource("6_jro52"), ExtResource("7_cuo4o")])
+conditions = Array[ExtResource("2_ciu65")]([ExtResource("5_ime28"), ExtResource("5_ime28")])
+condition_effects = Array[ExtResource("1_ifbsc")]([ExtResource("2_ijwlf"), ExtResource("3_0eo1d")])
+name = "reclaimed gunshop"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

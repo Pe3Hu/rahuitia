@@ -74,6 +74,11 @@ enum ConditionType {
 	ARSENAL = 9,
 	SACRIFICE = 10,
 	FORGE = 11,
+	DROP = 12,
+	TROPHY = 13,
+	BURY = 14,
+	HERALD = 15,
+	CHOOSE = 16,
 }
 
 enum ConditionValue {
@@ -82,6 +87,11 @@ enum ConditionValue {
 	A = 2,
 	B = 3,
 	C = 4
+}
+
+enum CostType {
+	DEFAULT = 0,
+	TARGETS = 1,
 }
 #endregion
 
@@ -98,6 +108,20 @@ enum TokenType {
 	SALE = 11,
 	KILL = 12,
 	AMBUSH = 13,
+	DIG = 14,
+	OVERLOAD = 15,
+	CALL = 16,
+	SWAP = 17,
+	SPY = 18,
+	SEARCH = 19,
+	HYBRID = 20,
+	REVIVE = 21,
+	AIM = 22,
+	SUPPLY = 23,
+	AVOID = 24,
+	SCOUT = 25,
+	SPLIT = 26,
+	MIRROR = 27,
 	
 	DANGER = 100,
 	OFFENSIVE = 101,
@@ -136,6 +160,20 @@ enum EffectType {
 	SALE = 11,
 	KILL = 12,
 	AMBUSH = 13,
+	DIG = 14,
+	OVERLOAD = 15,
+	CALL = 16,
+	SWAP = 17,
+	SPY = 18,
+	SEARCH = 19,
+	HYBRID = 20,
+	REVIVE = 21,
+	AIM = 22,
+	SUPPLY = 23,
+	AVOID = 24,
+	SCOUT = 25,
+	SPLIT = 26,
+	MIRROR = 27,
 }
 
 enum EffectValue {
@@ -143,9 +181,12 @@ enum EffectValue {
 	ONDECK = 1,
 	ANY = 2,
 	UNITE = 3,
+	ARMOR = 4,
 	FOCUS = 5,
 	SACRIFICE = 10,
+	FORGE = 11,
 	MODIFICATION = 7,
+	I = 101
 }
 #endregion
 

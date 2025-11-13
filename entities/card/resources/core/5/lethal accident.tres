@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=6 format=3 uid="uid://cq5tpoefsyv7"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_3dm3t"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_756wy"]
+[ext_resource type="Resource" uid="uid://b2k8xum4qm41c" path="res://entities/token/effect/damage_4.tres" id="3_8hatd"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_s1qnf"]
+[ext_resource type="Resource" uid="uid://w662uyflr115" path="res://entities/token/effect/train_1.tres" id="4_cdhor"]
+
+[resource]
+script = ExtResource("3_s1qnf")
+level = 5
+faction = 1
+default_effects = Array[ExtResource("1_3dm3t")]([ExtResource("3_8hatd"), ExtResource("4_cdhor")])
+name = "lethal accident"
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"

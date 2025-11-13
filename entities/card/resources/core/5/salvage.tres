@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardCoreResource" load_steps=8 format=3 uid="uid://d31b1qhgj7k3a"]
+
+[ext_resource type="Script" uid="uid://bteu5efegjnpk" path="res://entities/token/effect/effect_resource.gd" id="1_4qe3e"]
+[ext_resource type="Resource" uid="uid://bxn3r514byjv0" path="res://entities/token/effect/sale_3.tres" id="2_hk4k5"]
+[ext_resource type="Script" uid="uid://72gegbx4ks4" path="res://entities/token/condition/condition_resource.gd" id="2_xelfv"]
+[ext_resource type="Script" uid="uid://bw8sipxsuhu5x" path="res://entities/card/resources/core/card_core_resource.gd" id="3_358xn"]
+[ext_resource type="Resource" uid="uid://hnyrdrcxeyxa" path="res://entities/token/condition/bargain_3.tres" id="4_bcsxm"]
+[ext_resource type="Resource" uid="uid://b2k8xum4qm41c" path="res://entities/token/effect/damage_4.tres" id="5_oy1f7"]
+[ext_resource type="Resource" uid="uid://d1j7sn3fxx5pm" path="res://entities/token/effect/action_1.tres" id="6_e86a8"]
+
+[resource]
+script = ExtResource("3_358xn")
+level = 5
+faction = 4
+cost = 1
+default_effects = Array[ExtResource("1_4qe3e")]([ExtResource("5_oy1f7"), ExtResource("6_e86a8")])
+conditions = Array[ExtResource("2_xelfv")]([ExtResource("4_bcsxm")])
+condition_effects = Array[ExtResource("1_4qe3e")]([ExtResource("2_hk4k5")])
+metadata/_custom_type_script = "uid://bw8sipxsuhu5x"
